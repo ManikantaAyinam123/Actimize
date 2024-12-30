@@ -1,16 +1,19 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from './components/pages/HomePage';
-import MainComponent from './components/MainComponent';
+import HireDeveloperPage from './components/pages/HireDeveloperPage';
+import OurWorkPage from './components/pages/OurWorkPage';
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<MainComponent/>}>
+      <Route path="/" element={<HomePage/>}/>
+      <Route path="/hire-developer" element={<HireDeveloperPage/>}></Route>
+      <Route path="/our-work" element={<OurWorkPage/>}/>
      
       
-      </Route>
+     
     </Routes>
   </BrowserRouter>
   )

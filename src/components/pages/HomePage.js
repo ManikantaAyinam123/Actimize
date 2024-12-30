@@ -10,12 +10,14 @@ import HomeVerticalSwiperComponent from './HomeVerticalSwiperComponent'
 import LogosSliderComponent from '../LogosSliderComponent'
 import HomepageLastComponent from '../HomepageLastComponent'
 import Footer from '../Footer'
+import Navbar from '../Navbar'
 
 const HomePage = () => {
   return (
     <>
     <Grid container sx={{justifyContent:'center' ,width:'100%'}}>
       <Grid item sx={{width:'90%'}}>
+        <Navbar/>
     <Homecarousel1/>
     <HomeCardsComponent/>
     <HomeCardsComponent2/>
