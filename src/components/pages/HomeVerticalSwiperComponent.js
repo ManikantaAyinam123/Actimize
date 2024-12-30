@@ -1,9 +1,11 @@
 import React from 'react';
-import { Grid, Box, Typography, Avatar } from '@mui/material';
+import { Grid, Box, Typography, Avatar, useTheme } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules'; // Import Autoplay
+import Theme from '../../Theme';
+
 
 const testimonials = [
   {
@@ -24,31 +26,62 @@ const testimonials = [
 ];
 
 const HomeVerticalSwiperComponent = () => {
+  const theme =useTheme();
   return (
     <Grid container sx={{ mt: '160px', height: '500px' }}>
       {/* Left Static Content */}
       <Grid item xs={12} md={6} lg={7}>
         <Box
           sx={{
-            padding: '32px',
+            
             backgroundColor: '#f9f9f9',
             height: '100%',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
+            position: 'relative', 
+            border:'1px solid black'
           }}
         >
-          <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
+          <img 
+            src='../assets/images/women.svg' 
+            alt="Woman with folder" 
+            style={{ 
+              position: 'absolute', 
+              top: '-50px', 
+              right: 0, 
+              width: '50%', 
+              height: 'auto', 
+              objectFit: 'cover' 
+            }} 
+          />
+          <Box sx={{padding:'100px',border:'1px solid yellow',backgroundColor:theme.palette.background.border}}>
+          <Typography variant="h5" sx={{ 
+            fontWeight: 'bold', 
+            color: '#fff', 
+            backgroundColor: '#FF5733', 
+            padding: '8px 16px', 
+            borderRadius: '4px', 
+            marginBottom: '20px' 
+          }}>
+            Testimonials
+          </Typography>
+          <Typography variant="h4" sx={{ 
+            fontWeight: 'bold', 
+            color: '#333', 
+            marginBottom: '16px' 
+          }}>
             Why Businesses Choose Actimize
           </Typography>
           <Typography variant="body1" sx={{ color: '#666' }}>
             Our exceptional team delivers tailored solutions to meet your unique needs, ensuring your success in a competitive marketplace.
           </Typography>
+          </Box>
         </Box>
       </Grid>
 
       {/* Right Vertical Swiper */}
-      <Grid item xs={12} md={6} lg={5} sx={{ mt: '50px',maxWidth:'400px' }}>
+      <Grid item xs={12} md={6} lg={5} sx={{ mt: '50px', maxWidth: '400px' }}>
         <Swiper
           autoplay={{
             delay: 2500,
@@ -57,7 +90,7 @@ const HomeVerticalSwiperComponent = () => {
           direction={'vertical'}
           slidesPerView={1.2}
           pagination={{ clickable: true }}
-          modules={[ Autoplay]} // Add Autoplay module
+          modules={[Autoplay]} // Add Autoplay module
           style={{ height: '350px' }}
         >
           {testimonials.map((testimonial, index) => (
@@ -70,46 +103,54 @@ const HomeVerticalSwiperComponent = () => {
                   boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
                   display: 'flex',
                   flexDirection: 'column',
-                
-             
-                   height:'auto',
-               
-                  border:'1px solid #FFE4BB',
-                 
+                  height: 'auto',
+                  border: '1px solid #FFE4BB',
                 }}
               >
-                 <Box
+                <Box
                   component="img"
-                  src='../assets/images/verticalSwiper1.svg'
+                  src="../assets/images/verticalSwiper1.svg"
                   alt={`${testimonial.author}'s image`}
-                  sx={{
-                    width: '27px',
-                    height: '30px',
-                  
-                    mb: 2,
-                  }}
+                  sx={{ width: '27px', height: '30px', mb: 2 }}
                 />
                 <Typography></Typography>
                 <Typography
-                 sx={{ mt: { xs: '5px', sm: '4px' }, fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'15px' ,lg: '18px' }, lineHeight: { xs: '20px',md:'20px', lg: '28px' }, color: '#6A6A6A', }}
+                  sx={{
+                    mt: { xs: '5px', sm: '4px' },
+                    fontFamily: "'Ruwudu'",
+                    fontWeight: '400',
+                    fontSize: { xs: '15px', sm: '15px', md: '15px', lg: '18px' },
+                    lineHeight: { xs: '20px', md: '20px', lg: '28px' },
+                    color: '#6A6A6A',
+                  }}
                 >
                   "{testimonial.quote}"
                 </Typography>
-                <Box
-                  sx={{
-                    display: 'flex',
-                   
-                    mt: 2,
-                  }}
-                >
-                  <Avatar sx={{color:'black', width: 48, height: 48, mr: 2 }}>
+                <Box sx={{ display: 'flex', mt: 2 }}>
+                  <Avatar sx={{ color: 'black', width: 48, height: 48, mr: 2 }}>
                     {/* {testimonial.author[0]} */}
                   </Avatar>
                   <Box>
-                    <Typography    sx={{  fontFamily: "'Ruwudu'", fontWeight: '600', fontSize: { xs: '15px', sm: '15px',md:'15px' ,lg: '18px' }, lineHeight: { xs: '20px',md:'20px', lg: '28px' }, color: '#363636', }}>
+                    <Typography
+                      sx={{
+                        fontFamily: "'Ruwudu'",
+                        fontWeight: '600',
+                        fontSize: { xs: '15px', sm: '15px', md: '15px', lg: '18px' },
+                        lineHeight: { xs: '20px', md: '20px', lg: '28px' },
+                        color: '#363636',
+                      }}
+                    >
                       {testimonial.author}
                     </Typography>
-                    <Typography  sx={{  fontFamily: "'Ruwudu'", fontWeight: '500', fontSize: { xs: '15px', sm: '15px',md:'15px' ,lg: '14px' }, lineHeight: { xs: '20px',md:'20px', lg: '20px' }, color: '#363636', }}>
+                    <Typography
+                      sx={{
+                        fontFamily: "'Ruwudu'",
+                        fontWeight: '500',
+                        fontSize: { xs: '15px', sm: '15px', md: '15px', lg: '14px' },
+                        lineHeight: { xs: '20px', md: '20px', lg: '20px' },
+                        color: '#363636',
+                      }}
+                    >
                       {testimonial.role}
                     </Typography>
                   </Box>

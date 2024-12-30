@@ -190,8 +190,12 @@ function Navbar(props) {
             to={link.href}
             onClick={() => handleLinkClick(link.name)}
             style={({ isActive }) => ({
-              color: isActive ? '#ffc700' : '#363636',
+             
               textDecoration: 'none',
+              '&.Mui-selected': {
+                backgroundColor: '#FFC700', // Define the active styling here
+              }
+              
             })}
           >
             <ListItemText primary={link.name} />

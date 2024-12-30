@@ -27,7 +27,7 @@ const HomePage = () => {
     <LogosSliderComponent/>
     <HomepageLastComponent/>
 
-   < Typography sx={{mt:'50px'}}>This is homepage</Typography>
+   
    </Grid>
  
    </Grid>
