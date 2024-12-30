@@ -7,8 +7,26 @@ const Theme = createTheme({
     palette: {
         background: {
           default: "#FF5029",
+          bg:'#FEF3E2',
+          border:"#FFE4BB",
+          descp:"#6A6A6A"
+
         },
   },
+  typography: {
+
+    caption1: {
+        fontFamily: "ADLaM Display",
+    },
+    caption2: {
+        fontFamily: "Ruwudu",
+    },
+    caption3:{
+      fontFamily:"Inter"
+    }
+  },
+
+  
 
 
 
