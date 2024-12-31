@@ -33,7 +33,7 @@ const HireDeveloperThirdComponent = () => {
                     <Grid item xs={12} sx={{ display: {xs:"block",sm:"flex"} }} gap={{sm:1,md:5,lg:13}}>
                         <Grid item sm={3}lg={3}  mt={{xs:0,sm:12.5,md:9.5,lg:11,xl:12}}  mb={{xs:2,sm:0}}>
                             <Grid item xs={12}>
-                                <Grid item sx={{ border: `3px solid ${Theme.palette.background.border}`, borderRadius: 4 }} px={{sm:1,md:2}}>
+                                <Grid item sx={{ border: `3px solid ${Theme.palette.background.border}`, borderRadius: 4 }} px={{xs:1,md:2}}>
                                     {content.map((item, index) => (
                                         <Grid item key={index} sx={{ borderBottom: index === content.length - 1 ? "none" : `2px dashed ${Theme.palette.background.border}`, textAlign: "center", marginX: "auto", paddingY: 3.73 }} >
                                             <Typography variant='caption1' sx={{ textAlign: "center", fontSize: { xs: "13px",sm:"9px",md:"13px",lg:"13px",xl:"13px"}, fontWeight: "bold" }}>{item}</Typography>

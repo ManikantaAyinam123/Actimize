@@ -20,7 +20,6 @@ const HireDeveloperPage = () => {
     <HireDeveloperComponentTwo/>
     <HireDeveloperThirdComponent/>
     <HireDeveloperFouthComponent/>
-    
     </Grid>
     
     </Grid>

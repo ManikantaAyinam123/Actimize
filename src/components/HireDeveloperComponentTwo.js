@@ -4,6 +4,19 @@ import Theme from '../Theme';
 import { useEffect, useState } from 'react';
 import StaffaugementationComponent from './StaffaugementationComponent';
 import DeveloperCompoent from './DeveloperCompoent';
+import { styled } from "@mui/system";
+const StyledNavLink = styled(NavLink)(({ theme, active }) => ({
+  textDecoration: "none",
+  display: "inline-block",
+  border: "1px solid #FFE4BB",
+  borderRadius: "15px 15px 2px 2px",
+  borderBottom: active ? "none" : "1px solid #FFE4BB",
+  color: active ? theme.palette.background.default : "black",
+  backgroundColor: active ? "white" : theme.palette.background.bg,
+  transition: "all 0.3s ease",
+  cursor: "pointer",
+  padding: theme.breakpoints.down("sm") ? "5px 7px" : "10px 18px", // Responsive padding
+}));
 
 const HireDeveloperComponentTwo = () => {
     const [activeLink, setActiveLink] = useState(0); 
@@ -35,31 +48,17 @@ const HireDeveloperComponentTwo = () => {
         <Grid item justifyContent={{xs:"center",sm:"start"} }display="flex" spacing={0} xs={10}sm={11}md={11.5} sx={{ margin: "auto" }}>
           {links.map((link, index) => (
             <Grid item key={index}>
-              <NavLink
-                onClick={() => setActiveLink(index)} 
-                style={{
-                  textDecoration: "none",
-                  display: "inline-block",
-                  border: "1px solid #FFE4BB",
-                  borderRadius: "15px 15px 2px 2px",
-                  borderBottom: activeLink === index ? "none" : "1px solid #FFE4BB",
-                  color: activeLink === index ? Theme.palette.background.default : "black",
-                  backgroundColor: activeLink === index ? "white" : Theme.palette.background.bg,
-                  transition: "all 0.3s ease",
-                  cursor: "pointer",
-                }}
-              >
-                <Typography
-                  variant="caption1"
-                  sx={{
-                    fontSize: { xs: "10px",sm:"14px" },
-                    paddingX: {xs:1,sm:1.5},
-                    paddingY: {xs:1,sm:6},
-                  }}
-                >
-                  {link.name}
-                </Typography>
-              </NavLink>
+            <StyledNavLink onClick={() => setActiveLink(index)} active={activeLink === index}>
+  <Typography
+    variant="caption1"
+    sx={{
+      fontSize: { xs: "10px", sm: "14px" },
+    }}
+  >
+    {link.name}
+  </Typography>
+</StyledNavLink>
+
             </Grid>
           ))}
         </Grid>

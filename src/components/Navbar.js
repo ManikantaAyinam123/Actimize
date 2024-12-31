@@ -148,6 +148,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { Grid, useMediaQuery } from '@mui/material';
 
 const drawerWidth = 240;
 const links = [
@@ -165,6 +166,7 @@ function Navbar(props) {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const [activeLink, setActiveLink] = React.useState(null);
   const navigate = useNavigate()
+  const isMobileScreen = useMediaQuery('(max-width:600px)');
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -224,75 +226,157 @@ function Navbar(props) {
           width: { xs: '90%', sm: '100%' },
           backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.8)' : '#FFFFFF',
           backdropFilter: scrolled ? 'blur(10px)' : 'none',
-          boxShadow: scrolled ? '0px 4px 6px rgba(0, 0, 0, 0.1)' : 'none',
+          // boxShadow: scrolled ? '0px 4px 6px rgba(0, 0, 0, 0.1)' : 'none',
           color: 'black',
           display: 'flex',
           justifyContent: { xs: 'space-between' },
           padding: { xs: '10px 20px', sm: '10px 7px', md: '12px 8px' },
           zIndex: 1100,
+          // alignItems:"center"
+          // border:'2px solid red'
         }}
       >
-        <IconButton
-          aria-label="open drawer"
-          edge="start"
-          onClick={handleDrawerToggle}
-          sx={{ mr: 2, display: { sm: 'none' } }}
+       {isMobileScreen ? 
+  <Grid container sx={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
+    <Grid item>
+      <IconButton
+        aria-label="open drawer"
+        edge="start"
+        onClick={handleDrawerToggle}
+        sx={{ mr: 2, display: { sm: 'none' } }}
+      >
+        <MenuIcon />
+      </IconButton>
+    </Grid>
+
+    <Grid item sx={{ backgroundColor: "#EEEEEE"}}>
+      <Box sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        cursor: "pointer",
+       
+        opacity: "60%",
+        padding: 1,
+        borderRadius: 10
+      }} onClick={() => handleNavigate()}>
+        <Box
+          component="img"
+          src="../assets/images/logo.png"
+          alt="Logo Icon"
+          sx={{
+            width: { xs: '30px', md: '48px' },
+            height: { xs: '30px', md: '48px' },
+          }}
+        />
+        <Typography
+          sx={{
+            fontFamily: "'ADLaM Display',serif",
+            fontWeight: '400',
+            fontSize: { xs: '15px', sm: '15px', md: '20px' },
+            lineHeight: '27px',
+          }}
         >
-          <MenuIcon />
-        </IconButton>
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <Box
-            component="img"
-            src="../assets/images/logo.png"
-            alt="Logo Icon"
-            sx={{
-              width: { xs: '30px', md: '48px' },
-              height: { xs: '30px', md: '48px' },
-              cursor:"pointer",
-              
-            }}
-            onClick={()=>handleNavigate()}
-          />
-          <Typography
-            sx={{
-              fontFamily: "'ADLaM Display',serif",
-              fontWeight: '400',
-              fontSize: { xs: '15px', sm: '15px', md: '20px' },
-              lineHeight: '27px',
-            }}
-          >
-            Actimize
-          </Typography>
-        </Box>
-        <Box sx={{ display: { xs: 'none', sm: 'block' }, alignContent: 'center' }}>
-  {links.map((item) => (
-    <Button
-      key={item.href}
+          Actimize
+        </Typography>
+      </Box>
+    </Grid>
+  </Grid> :
+  <Grid item xs={12} sx={{display:"flex",justifyContent:"space-between"}} px={{sm:4}}>
+  <Box sx={{ display: {xs:"none",sm:'flex'}, justifyContent: 'center', alignItems: 'center',cursor:"pointer",backgroundColor:"#EEEEEE",opacity:"60%" ,padding:1,paddingX:2,borderRadius:10,}} onClick={()=>handleNavigate()}>
+    <Box
+      component="img"
+      src="../assets/images/logo.png"
+      alt="Logo Icon"
+      sx={{
+        width: { xs: '30px', md: '48px' },
+        height: { xs: '30px', md: '48px' },
+        
+        
+      }}
+      
+    />
+    <Typography
+      sx={{
+        fontFamily: "'ADLaM Display',serif",
+        fontWeight: '400',
+        fontSize: { xs: '15px', sm: '15px', md: '20px' },
+        lineHeight: '27px',
+      }}
+    >
+      Actimize
+    </Typography>
+  </Box>
+  <Box
+  sx={{
+    display: { xs: 'none', sm: 'flex' }, 
+    textAlign: "center",
+    alignContent: 'center',
+    backgroundColor: "#EEEEEE",
+    opacity: "60%",
+    paddingX: 2,
+    paddingY: 1,
+    borderRadius: 10,
+    flexDirection: "row", 
+    justifyContent:"center",
+    gap: 2, 
+  }}
+>
+{links.map((item) => (
+  <Grid
+    key={item.href} // Move key here to avoid warnings
+    item
+    sx={{
+      backgroundColor: "#FF5029",
+      alignItems: "center",
+      textAlign: "center",
+      borderRadius: '40px',
+    }}
+    p={0}
+    m={0}
+  >
+    <Typography
       component={NavLink}
       to={item.href}
       sx={{
         color: 'black',
         textTransform: 'none',
-        borderRadius: '20px',
         padding: { sm: '4px 12px', md: '4px 15px' },
+        display: 'flex',
+        justifyContent: 'center',
         alignItems: 'center',
         fontSize: { xs: '18px', sm: '12px', md: '15px' },
         fontWeight: '700',
+        fontFamily: "Ruwudu",
+        marginTop: 1.5,
+        whiteSpace: 'nowrap',
+        textDecoration: "none",
+        borderRadius: '40px', // Ensure border radius matches the container
         '&.active': {
-          color: '#fff',
-          backgroundColor: '#FF5029',
+          backgroundColor: '#FF5029', // Orange background for active link
+          color: '#fff', // Ensure text is visible
         },
         '&:hover': {
           backgroundColor: 'rgba(0, 0, 0, 0.1)',
         },
       }}
       onClick={() => setDrawerOpen(false)} // Handle drawer logic
-      activeClassName="active" // This sets the 'active' class for NavLink
+      activeClassName="active" // Sets the 'active' class for NavLink
     >
       {item.name}
-    </Button>
-  ))}
+    </Typography>
+  </Grid>
+))}
+
 </Box>
+
+
+
+</Grid>
+}
+
+      
+        
 
       </Box>
       <nav>
