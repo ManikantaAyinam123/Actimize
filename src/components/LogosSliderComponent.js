@@ -11,8 +11,12 @@ const logos = [
   { image: '../assets/images/blockchain.svg' },
   { image: '../assets/images/localDhukan.svg'},
   { image: '../assets/images/aqualab.svg'},
+  { image: '../assets/images/Lumirise.svg' },
+  { image: '../assets/images/builder.ai.svg'},
+  { image: '../assets/images/blockchain.svg' },
   { image: '../assets/images/localDhukan.svg'},
   { image: '../assets/images/aqualab.svg'},
+ 
 ];
 
 export default function LogosSliderComponent() {
@@ -54,14 +58,17 @@ export default function LogosSliderComponent() {
       {/* Swiper Component */}
       <Swiper
         modules={[Autoplay]}
-        slidesPerView={3}
-        spaceBetween={20}
-        autoplay={{ delay: 3000 }}
-        pagination={{ clickable: true }}
+        autoplay={{
+          delay: 0, // No delay for continuous scrolling
+          disableOnInteraction: false, // Ensure autoplay continues after interaction
+        }}
+        speed={4000} // Adjust the speed for smoother continuous scrolling
+        loop={true} // Infinite scrolling
+        loopAdditionalSlides={5} 
         breakpoints={{
             320:{slidesPerView: 2 },
           640: { slidesPerView: 3},
-          1024: { slidesPerView: 4.5 },
+          1024: { slidesPerView: 5 },
         }}
         style={{ marginTop: '20px' }}
       >
@@ -72,8 +79,8 @@ export default function LogosSliderComponent() {
                 component="img"
                 src={logo.image}
                sx={{
-                  width: '100px',
-                  height: '100px',
+                  width: '150px',
+                  height: '150px',
                 }}
               />
           </SwiperSlide>

@@ -11,6 +11,7 @@ import LogosSliderComponent from '../LogosSliderComponent'
 import HomepageLastComponent from '../HomepageLastComponent'
 import Footer from '../Footer'
 import Navbar from '../Navbar'
+import HomeCardsComponent5 from '../HomeCardsComponent5'
 
 const HomePage = () => {
   return (
@@ -20,8 +21,10 @@ const HomePage = () => {
         <Navbar/>
     <Homecarousel1/>
     <HomeCardsComponent/>
-    <HomeCardsComponent2/>
-    <HomeCardsComponent3/>
+    <HomeCardsComponent5/>
+ 
+    
+    
     <HomeCardsComponent4/>
     <HomeVerticalSwiperComponent/>
     <LogosSliderComponent/>

@@ -134,8 +134,7 @@ export default function HomeCardsComponent() {
               sx={{
                 textAlign: 'center',
                 padding:'32px',
-                border: '1px solid black',
-                transition: 'transform 0.3s',
+               transition: 'transform 0.3s',
                 '&:hover': { transform: 'scale(1.05)' },
                 backgroundColor: '#FDFCF9',
                 borderRadius: '16px'

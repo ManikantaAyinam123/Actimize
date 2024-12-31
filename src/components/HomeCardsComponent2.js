@@ -91,11 +91,11 @@ export default function HomeCardsComponent2() {
                 }}
               />
               {/* Title */}
-              <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ mt: 4 }}>
+              <Typography sx={{ ml:'8px', fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
                 {feature.title}
               </Typography>
               {/* Description */}
-              <Typography variant="body2" color="text.secondary">
+              <Typography sx={{  mx: "auto", maxWidth:'280px', mt: { xs: '5px', sm: '4px' }, fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
                 {feature.description}
               </Typography>
             </Box>

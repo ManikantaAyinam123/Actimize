@@ -16,6 +16,7 @@ const AboutUs = () => {
     <Navbar />
     <AboutUs1/>
     <HomeCardsComponent3/>
+   
     <AboutUs2/>
     <AboutUs3/>
  
