@@ -5,8 +5,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules'; // Import Autoplay
 import Theme from '../../Theme';
-
-
+ 
+ 
 const testimonials = [
   {
     quote: "“We are incredibly grateful to Actimize for their exceptional work. They took the time to understand our unique needs and delivered a custom solution that sets us apart from our competitors. It has become a valuable asset to our business.”",
@@ -24,52 +24,77 @@ const testimonials = [
     role: "CTO",
   },
 ];
-
+ 
 const HomeVerticalSwiperComponent = () => {
   const theme =useTheme();
   return (
-    <Grid container sx={{ mt: '160px', height: '500px' }}>
+    <Grid container sx={{ mt: '160px', height: 'auto' }}>
       {/* Left Static Content */}
-      <Grid item xs={12} md={6} lg={7}>
+      <Grid item xs={12} md={6} lg={7} gap={2} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <Box
+          sx={{
+           
+            backgroundColor: '#ffffffff',
+            height: '100%',
+            width:'100%',
+            marginBottom: '16px',
+           
+          }}
+        >
+          <img
+            src='../assets/images/Frame_123.svg'
+            alt="Woman with folder"
+            style={{
+             height: '100%',
+             width: '80%',
+             
+             
+              display: 'flex',
+              justifyContent: 'center',margin:'auto', textAlign:'center'
+            }}
+          />
+        </Box>
+      </Grid>
+      {/* <Grid item xs={12} md={6} lg={7}>
         <Box
           sx={{
-            
+           
             backgroundColor: '#f9f9f9',
             height: '100%',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            position: 'relative', 
+            position: 'relative',
             border:'1px solid black'
           }}
         >
-          <img 
-            src='../assets/images/women.svg' 
-            alt="Woman with folder" 
-            style={{ 
-              position: 'absolute', 
-              top: '-50px', 
-              right: 0, 
-              width: '50%', 
-              height: 'auto', 
-              objectFit: 'cover' 
-            }} 
+          <img
+            src='../assets/images/Frame_123.svg'
+            alt="Woman with folder"
+            style={{
+              position: 'absolute',
+              top: '-50px',
+              right: 0,
+              width: '50%',
+              height: 'auto',
+              objectFit: 'cover'
+            }}
           />
           <Box sx={{padding:'100px',border:'1px solid yellow',backgroundColor:theme.palette.background.border}}>
-          <Typography variant="h5" sx={{ 
-            fontWeight: 'bold', 
-            color: '#fff', 
-            backgroundColor: '#FF5733', 
-            padding: '8px 16px', 
-            borderRadius: '4px', 
-            marginBottom: '20px' 
+          <Typography variant="h5" sx={{
+            fontWeight: 'bold',
+            color: '#fff',
+            backgroundColor: '#FF5733',
+            padding: '8px 16px',
+            borderRadius: '4px',
+            marginBottom: '20px'
           }}>
             Testimonials
           </Typography>
-          <Typography variant="h4" sx={{ 
-            fontWeight: 'bold', 
-            color: '#333', 
-            marginBottom: '16px' 
+          <Typography variant="h4" sx={{
+            fontWeight: 'bold',
+            color: '#333',
+            marginBottom: '16px'
           }}>
             Why Businesses Choose Actimize
           </Typography>
@@ -78,10 +103,10 @@ const HomeVerticalSwiperComponent = () => {
           </Typography>
           </Box>
         </Box>
-      </Grid>
-
+      </Grid> */}
+ 
       {/* Right Vertical Swiper */}
-      <Grid item xs={12} md={6} lg={5} sx={{ mt: '50px', maxWidth: '400px' }}>
+      <Grid item xs={12} md={6} lg={5} style={{ display: 'flex', justifyContent: 'center', alignItems: 'end' }}>
         <Swiper
           autoplay={{
             delay: 2500,
@@ -91,7 +116,7 @@ const HomeVerticalSwiperComponent = () => {
           slidesPerView={1.2}
           pagination={{ clickable: true }}
           modules={[Autoplay]} // Add Autoplay module
-          style={{ height: '350px' }}
+          style={{ height: '350px' , display: 'flex', justifyContent: 'end',alignItems: 'center',}}
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
@@ -100,10 +125,10 @@ const HomeVerticalSwiperComponent = () => {
                   backgroundColor: '#fff',
                   borderRadius: '8px',
                   padding: '24px',
-                  boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
+                 
                   display: 'flex',
                   flexDirection: 'column',
-                  height: 'auto',
+                 
                   border: '1px solid #FFE4BB',
                 }}
               >
@@ -163,5 +188,5 @@ const HomeVerticalSwiperComponent = () => {
     </Grid>
   );
 };
-
+ 
 export default HomeVerticalSwiperComponent;
