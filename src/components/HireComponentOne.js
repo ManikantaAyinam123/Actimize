@@ -9,20 +9,29 @@ const HireComponentOne = () => {
     <Grid container justifyContent="center"  >
     <Grid container sx={{ display: "block", alignItems: "center", textAlign: "center", marginX: "auto", }} mt={{ xs: 12, md: 20 }}>
  
-    <Grid item xs={3} sm={1.5} md={1}lg={0.6} xl={0.4}sx={{ 
-  backgroundColor: Theme.palette.background.bg, 
-  textAlign: "center", 
-  display: "flex", 
-  justifyContent: "center", 
-  alignItems: "center", 
-  borderRadius: 20, 
-  margin: "auto",
-  paddingX:{xs:0.4,lg:0},
-}}>
-  <Typography variant="caption1" sx={{ color: Theme.palette.background.default, fontSize: { xs: "14px" }, margin: "auto" }}>
-    Hire Us
-  </Typography>
-</Grid>
+     <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                mb: 2,
+              }}
+            >
+              <Box
+                sx={{
+                  px: 3,
+                  py: 1,
+                  backgroundColor: '#fff4e6', // Light orange background
+                  borderRadius: '24px', // Rounded corners
+                }}
+              >
+                <Typography
+                 sx={{ fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '12px', sm: '14px', md: '16px' }, lineHeight: { xs: '15px', md: '20px' }, color: Theme.palette.background.default, }}
+                >
+                 Hire Us
+                </Typography>
+              </Box>
+            </Box>
 
 
  

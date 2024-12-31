@@ -5,6 +5,9 @@ import HireComponentOne from '../HireComponentOne'
 import { Grid } from '@mui/material'
 import Navbar from '../Navbar'
 import HireDeveloperComponentTwo from '../HireDeveloperComponentTwo'
+import HireDeveloperThirdComponent from '../HireDeveloperThirdComponent'
+import HireDeveloperFouthComponent from '../HireDeveloperFouthComponent'
+import Footer from '../Footer'
 
 
 const HireDeveloperPage = () => {
@@ -15,8 +18,13 @@ const HireDeveloperPage = () => {
         <Navbar />
     <HireComponentOne/>
     <HireDeveloperComponentTwo/>
+    <HireDeveloperThirdComponent/>
+    <HireDeveloperFouthComponent/>
+    
     </Grid>
+    
     </Grid>
+    <Footer/>
     </>
   )
 }

@@ -163,7 +163,7 @@ function Navbar(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
   const [drawerOpen, setDrawerOpen] = React.useState(false);
-  const [activeLink, setActiveLink] = React.useState('Home');
+  const [activeLink, setActiveLink] = React.useState(null);
   const navigate = useNavigate()
 
   const handleDrawerToggle = () => {
@@ -193,7 +193,7 @@ function Navbar(props) {
              
               textDecoration: 'none',
               '&.Mui-selected': {
-                backgroundColor: '#FFC700', // Define the active styling here
+                backgroundColor: '#FFC700', 
               }
               
             })}
@@ -265,33 +265,35 @@ function Navbar(props) {
           </Typography>
         </Box>
         <Box sx={{ display: { xs: 'none', sm: 'block' }, alignContent: 'center' }}>
-          {links.map((item) => (
-            <Button
-              key={item.href} 
-              component={NavLink}
-              to={item.href} 
-              sx={{
-                color: activeLink === item.name ? '#fff' : 'black',
-                backgroundColor: activeLink === item.name ? '#FF5029' : 'transparent',
-                textTransform: 'none',
-                borderRadius: '20px',
-                padding: { sm: '4px 12px', md: '4px 15px' },
-                alignItems: 'center',
-                fontSize: { xs: '18px', sm: '12px', md: '15px' },
-                fontWeight: '700',
-                '&:hover': {
-                  backgroundColor:
-                  activeLink === item.name
-                      ? 'theme.palette.background.default'
-                      : 'rgba(0, 0, 0, 0.1)',
-                },
-              }}
-              onClick={() => handleLinkClick(item.name)}
-            >
-              {item.name}
-            </Button>
-          ))}
-        </Box>
+  {links.map((item) => (
+    <Button
+      key={item.href}
+      component={NavLink}
+      to={item.href}
+      sx={{
+        color: 'black',
+        textTransform: 'none',
+        borderRadius: '20px',
+        padding: { sm: '4px 12px', md: '4px 15px' },
+        alignItems: 'center',
+        fontSize: { xs: '18px', sm: '12px', md: '15px' },
+        fontWeight: '700',
+        '&.active': {
+          color: '#fff',
+          backgroundColor: '#FF5029',
+        },
+        '&:hover': {
+          backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        },
+      }}
+      onClick={() => setDrawerOpen(false)} // Handle drawer logic
+      activeClassName="active" // This sets the 'active' class for NavLink
+    >
+      {item.name}
+    </Button>
+  ))}
+</Box>
+
       </Box>
       <nav>
         <Drawer
