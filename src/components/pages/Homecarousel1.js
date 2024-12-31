@@ -16,15 +16,15 @@ export default function Homecarousel1() {
       imgSrc: '../assets/images/Swiper1.svg',
     },
     {
-        title: 'Expert Web & Mobile App Development',
-        description: 'Transform your digital presence with custom web and mobile apps built for success. We offer end-to-end services, from app development to UI/UX design, delivering solutions that make an impact.',
-        buttonText: "Let's Talk",
+        title: 'Hire Dedicated Developers',
+        description: 'Expand your team with top developers from our company. We provide skilled professionals who can seamlessly integrate with your team and meet all your project needs efficiently.',
+        buttonText: "Hire Now!",
         imgSrc: '../assets/images/Swiper2.svg',
       },
       {
-        title: 'Expert Web & Mobile App Development',
-        description: 'Transform your digital presence with custom web and mobile apps built for success. We offer end-to-end services, from app development to UI/UX design, delivering solutions that make an impact.',
-        buttonText: "Let's Talk",
+        title: 'Drive Business Growth with Innovative Solutions',
+        description: "Whether you're launching a new business or enhancing an existing one, our team helps turn your ideas into impactful solutions that drive growth and success.",
+        buttonText: "Get in touch",
         imgSrc: '../assets/images/Swiper3.svg',
       },
   ];
@@ -40,7 +40,13 @@ export default function Homecarousel1() {
           clickable: true,
         }}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
+        className="custom-swiper"
+        style={{
+          '--swiper-navigation-color': '#FF5722',
+          '--swiper-pagination-color': '#FF5722',
+          '--swiper-pagination-bullet-inactive-color': '#ccc',
+          '--swiper-pagination-bullet-inactive-opacity': '0.6',
+        }}
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -92,8 +98,9 @@ export default function Homecarousel1() {
                 sx={{
                   flex: 1,
                   display: 'flex',
-                  justifyContent: 'center',
+                  justifyContent:{xs:'center',md:'flex-end'},
                   alignItems: 'center',
+                 
                 }}
               >
                 <img
