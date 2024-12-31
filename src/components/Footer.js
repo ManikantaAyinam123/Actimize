@@ -13,10 +13,17 @@ const Footer = () => {
       top: 0,
       left: 0,
       width: '100%',
+      height: {
+        xs: '68px',  
+        sm: '100px', 
+        md: '110px', 
+        lg:'120px'
+      },
+    
  
     }}
   >
-   <svg width="100%" height="120px" viewBox="0 0 2560 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <svg width="100%" height="100%"  viewBox="0 0 2560 120" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M2560 7.62939e-06C2231.63 7.62939e-06 2109.76 58.616 1653.33 58.616C1196.9 58.616 873.186 7.62939e-06 481.667 7.62939e-06C90.1476 7.62939e-06 0 58.616 0 58.616V120H2560V7.62939e-06Z" fill="#2c2c2c"/>
 </svg>
   </Box>

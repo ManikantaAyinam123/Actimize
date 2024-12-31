@@ -160,8 +160,8 @@ const DeveloperCompoent = () => {
                                                             <Field
                                                                 name="CompanyName"
                                                                 as={TextField}
-                                                                type="email"
-                                                                label="Email"
+                                                             
+                                                                label="Company Name"
                                                                 variant="outlined"
                                                                 fullWidth
                                                                 size="small"
