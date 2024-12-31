@@ -5,6 +5,8 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { TextField, Button, } from '@mui/material';
 import { CheckBox, Toys } from '@mui/icons-material';
+import emailjs from 'emailjs-com'
+import { toast } from 'react-toastify';
 
 
 const checkContent = [
@@ -25,29 +27,59 @@ const StaffaugementationComponent = () => {
       };
   
       const validationSchema = Yup.object({
-          name: Yup.string()
-              .required('Name is required')
-              .min(3, 'Name must be at least 3 characters long')
-              .matches(/^[A-Za-z]+$/, 'Name must contain only alphabets'),
-  
-          email: Yup.string()
-              .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Email must be a valid email address')
-              .required('Email is required'),
-  
-          password: Yup.string()
-              .required('Password is required')
-              .min(8, 'Password must be at least 8 characters long')
-              .matches(/[A-Z]/, 'Password must contain at least one uppercase letter')
-              .matches(/[a-z]/, 'Password must contain at least one lowercase letter')
-              .matches(/[0-9]/, 'Password must contain at least one number')
-              .matches(/[^a-zA-Z0-9]/, 'Password must contain at least one special character'),
-      });
+             FullName: Yup.string()
+                 .required('Name is required')
+                 .min(3, 'Name must be at least 3 characters long')
+                 .matches(/^[A-Za-z]+$/, 'Name must contain only alphabets'),
+             CompanyName: Yup.string()
+                 .required('Company Name is required')
+                 .min(3, 'Name must be at least 3 characters long')
+                 .matches(/^[A-Za-z]+$/, 'Name must contain only alphabets'),
+             email: Yup.string()
+                 .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Email must be a valid email address')
+                 .required('Email is required'),
+             PhoneNumber: Yup.string()
+                 .required('Mobile number is required')
+                 .matches(/^[0-9]{10}$/, 'Mobile number must be exactly 10 digits'),
+             checkboxGroup: Yup.array()
+                 .min(1, 'At least one checkbox must be selected')
+                 .required('This field is required'),
+             requirements: Yup.string()
+                 .required('Requirements field is required')
+                 .min(10, 'Requirements must be at least 10 characters long'),
+         });
   
   
   
       const onSubmit = (values, actions) => {
           console.log("Form Values:", values);
           actions.resetForm();
+          const  service_id = 'service_okycvj8'
+          const template_id= 'template_izpnvkk'
+          const user_id = 'H9mKbRUHuFIU-z7Bh'
+          const template_params = {
+               from_name: values.fname + values.lname,
+               from_email:values.email,
+               from_number:values.phone,
+               message : values.message,
+               from_citizenship:values.citizenship,
+               from_donationFrequency:values.donationFrequency,
+               from_donationAmount:values.donationAmount,
+               to_name:"Charity Foundation"
+           }
+      
+  
+  
+       
+      emailjs.send(service_id , template_id , template_params , user_id)
+      .then((response)=>{
+       console.log("Email sent successfully",response)
+       toast.success("Your request sent successfully!"); 
+      })
+      .catch((error)=>{
+       console.log("error sending Email",error)
+       toast.error("Error sending request. Please try again.");
+      })
       };
       const content = [
           "Augment your team with qualified experts.", "Enhance capabilities for both short-term and long-term projects.", "Access a pool of developers across various tech stacks.",
@@ -81,26 +113,33 @@ const StaffaugementationComponent = () => {
                             </Grid>
                             <Grid container justifyContent="center">
                                 <Grid item xs={12}>
-                                    <Formik
-                                        initialValues={{ name: '', email: '', password: '' }}
+                                <Formik
+                                        initialValues={{
+                                            FullName: '',
+                                            CompanyName: '',
+                                            email: '',
+                                            PhoneNumber: '',
+                                            checkboxGroup: [],  
+                                            requirements: '',  
+                                        }}
                                         validationSchema={validationSchema}
                                         onSubmit={onSubmit}
                                     >
                                         {({ errors, touched, isSubmitting }) => (
                                             <Form>
                                                 <Grid container spacing={2} sx={{ justifyContent: "center" }}>
-                                                    <Grid item sx={{ display: {xs:"block",sm:"flex"} }} xs={12} gap={2}>
+                                                    <Grid item sx={{ display: { xs: "block", sm: "flex" } }} xs={12} gap={2}>
                                                         <Grid item sm={6}>
                                                             <Grid item><Typography variant='caption2' sx={{ color: "#363636" }}>Full Name</Typography></Grid>
                                                             <Field
-                                                                name="Full Name"
+                                                                name="FullName"
                                                                 as={TextField}
                                                                 label="Full Name"
                                                                 variant="outlined"
                                                                 fullWidth
                                                                 size="small"
-                                                                error={touched.name && Boolean(errors.name)}
-                                                                helperText={touched.name && errors.name}
+                                                                error={touched.FullName && Boolean(errors.FullName)}
+                                                                helperText={touched.FullName && errors.FullName}
                                                                 sx={{
                                                                     "& .MuiOutlinedInput-root": {
                                                                         "& fieldset": {
@@ -119,10 +158,38 @@ const StaffaugementationComponent = () => {
                                                         <Grid item sm={6}>
                                                             <Grid item><Typography variant='caption2' sx={{ color: "#363636" }}>Company Name</Typography></Grid>
                                                             <Field
-                                                                name="Company Name"
+                                                                name="CompanyName"
                                                                 as={TextField}
                                                                 type="email"
                                                                 label="Email"
+                                                                variant="outlined"
+                                                                fullWidth
+                                                                size="small"
+                                                                error={touched.CompanyName && Boolean(errors.CompanyName)}
+                                                                helperText={touched.CompanyName && errors.CompanyName}
+                                                                sx={{
+                                                                    "& .MuiOutlinedInput-root": {
+                                                                        "& fieldset": {
+                                                                            borderColor: "#FFE4BB",
+                                                                        },
+                                                                        "&:hover fieldset": {
+                                                                            borderColor: "darkorange",
+                                                                        },
+                                                                        "&.Mui-focused fieldset": {
+                                                                            borderColor: "#FFE4BB",
+                                                                        },
+                                                                    },
+                                                                }}
+                                                            />
+                                                        </Grid>
+                                                    </Grid>
+                                                    <Grid item sx={{ display: { xs: "block", sm: "flex" } }} xs={12} gap={2}>
+                                                        <Grid item sm={6}>
+                                                            <Grid item><Typography variant='caption2' sx={{ color: "#363636" }}>Work Email Address</Typography></Grid>
+                                                            <Field
+                                                                name="email"
+                                                                as={TextField}
+                                                                label="Your work email address"
                                                                 variant="outlined"
                                                                 fullWidth
                                                                 size="small"
@@ -143,38 +210,10 @@ const StaffaugementationComponent = () => {
                                                                 }}
                                                             />
                                                         </Grid>
-                                                    </Grid>
-                                                    <Grid item sx={{ display: {xs:"block",sm:"flex"} }} xs={12} gap={2}>
-                                                        <Grid item sm={6}>
-                                                            <Grid item><Typography variant='caption2' sx={{ color: "#363636" }}>Work Email Address</Typography></Grid>
-                                                            <Field
-                                                                name="Work Email Address"
-                                                                as={TextField}
-                                                                label="Your work email address"
-                                                                variant="outlined"
-                                                                fullWidth
-                                                                size="small"
-                                                                error={touched.password && Boolean(errors.password)}
-                                                                helperText={touched.password && errors.password}
-                                                                sx={{
-                                                                    "& .MuiOutlinedInput-root": {
-                                                                        "& fieldset": {
-                                                                            borderColor: "#FFE4BB",
-                                                                        },
-                                                                        "&:hover fieldset": {
-                                                                            borderColor: "darkorange",
-                                                                        },
-                                                                        "&.Mui-focused fieldset": {
-                                                                            borderColor: "#FFE4BB",
-                                                                        },
-                                                                    },
-                                                                }}
-                                                            />
-                                                        </Grid>
                                                         <Grid item sm={6}>
                                                             <Grid item><Typography variant='caption2' sx={{ color: "#363636" }}>Phone Number</Typography></Grid>
                                                             <Field
-                                                                name="Phone Number"
+                                                                name="PhoneNumber"
                                                                 as={TextField}
                                                                 label="Your Phone Number"
                                                                 variant="outlined"
@@ -193,59 +232,57 @@ const StaffaugementationComponent = () => {
                                                                         },
                                                                     },
                                                                 }}
-                                                                error={touched.name && Boolean(errors.name)}
-                                                                helperText={touched.name && errors.name}
+                                                                error={touched.PhoneNumber && Boolean(errors.PhoneNumber)}
+                                                                helperText={touched.PhoneNumber && errors.PhoneNumber}
                                                             />
                                                         </Grid>
                                                     </Grid>
                                                     <Grid item xs={12}>
 
-                                                        <Grid item xs={12} sx={{ display: {xs:"block",sm:"flex"} }}>
-                                                            <FormControl sx={{ display: "block", flexDirection: "row", alignItems: "center" }}>
-                                                                <FormLabel id="expert-radio-group-label" sx={{ marginRight: 2, color: "#363636", fontFamily: "Inter" }}>
+                                                        <Grid item xs={12} sx={{ display: { xs: "block", sm: "flex" } }}>
+                                                            <FormControl sx={{ display: "block", flexDirection: "row", alignItems: "center", }} >
+                                                                <FormLabel id="expert-radio-group-label" sx={{ marginRight: 2, color: "#363636", fontFamily: "Inter" ,}}>
                                                                     Choose your Expert
                                                                 </FormLabel>
-                                                                <Grid container spacing={2}>
-                                                                    {checkContent.map((item, index) => (
-                                                                        <Grid item key={index}>
-                                                                            <FormControlLabel
-                                                                                control={
-                                                                                    <Checkbox
-                                                                                        checked={checkedItems.includes(item)}
-                                                                                        onChange={handleChange}
-                                                                                        value={item}
-                                                                                        sx={{ '& .MuiSvgIcon-root': { color: Theme.palette.background.default, fontSize: "medium", }, }}
-                                                                                    />
-                                                                                }
-                                                                                label={item}
-                                                                                sx={{ fontSize: "12px",color:Theme.palette.background.descp }}
-                                                                            />
-                                                                        </Grid>
-                                                                    ))}
-                                                                    {checkContentTwo.map((item, index) => (
-                                                                        <Grid item key={index} sm={4}md={3} sx={{padding:0,margin:0}}>
-                                                                            <FormControlLabel
-                                                                                control={
-                                                                                    <Checkbox
-                                                                                        checked={checkedItems.includes(item)} // Check if item is selected
-                                                                                        onChange={handleChange}
-                                                                                        value={item}
-                                                                                        sx={{ '& .MuiSvgIcon-root': { color: Theme.palette.background.default, fontSize: "medium" }, }}
-                                                                                    />
-                                                                                }
-                                                                                label={item}
-                                                                                sx={{ fontSize: "12px",color:Theme.palette.background.descp }}
-                                                                            />
-                                                                        </Grid>
-                                                                    ))}
+                                                                <Grid container >
+                                                                    <Grid container spacing={2}>
+                                                                        {checkContent.concat(checkContentTwo).map((item, index) => (
+                                                                            <Grid item key={index} xs={6} sm={4}>
+                                                                                <FormControlLabel
+                                                                                    control={
+                                                                                        <Field
+                                                                                            type="checkbox"
+                                                                                            name="checkboxGroup"
+                                                                                            value={item}
+                                                                                            as={Checkbox}
+                                                                                            sx={{
+                                                                                                '& .MuiSvgIcon-root': {
+                                                                                                    color: Theme.palette.background.default,
+                                                                                                    fontSize: "medium",
+                                                                                                },
+                                                                                            }}
+                                                                                        />
+                                                                                    }
+                                                                                    label={item}
+                                                                                    sx={{ fontSize: "12px", color: Theme.palette.background.descp }}
+                                                                                />
+                                                                            </Grid>
+                                                                        ))}
+                                                                    </Grid>
+                                                                    {errors.checkboxGroup && touched.checkboxGroup && (
+                                                                        <Typography color="error" variant="caption">
+                                                                            {errors.checkboxGroup}
+                                                                        </Typography>
+                                                                    )}
+
                                                                 </Grid>
                                                             </FormControl>
                                                         </Grid>
                                                     </Grid>
                                                     <Grid item xs={12}>
-                                                        <Grid item><Typography variant='caption2' sx={{color:"#363636"}}>Your Requirements</Typography></Grid>
+                                                        <Grid item><Typography variant='caption2' sx={{ color: "#363636" }}>Your Requirements</Typography></Grid>
                                                         <Grid item xs={12}>
-                                                        <Field rows={6}  name="Work Email Address"
+                                                            <Field rows={6} name="requirements"
                                                                 as={TextField}
                                                                 label="Write your Requirements"
                                                                 variant="outlined"
@@ -253,8 +290,8 @@ const StaffaugementationComponent = () => {
                                                                 size="small"
                                                                 multiline
                                                                 row={6}
-                                                                error={touched.password && Boolean(errors.password)}
-                                                                helperText={touched.password && errors.password}
+                                                                error={touched.requirements && Boolean(errors.requirements)}
+                                                                helperText={touched.requirements && errors.requirements}
                                                                 sx={{
                                                                     "& .MuiOutlinedInput-root": {
                                                                         "& fieldset": {
@@ -267,7 +304,7 @@ const StaffaugementationComponent = () => {
                                                                             borderColor: "#FFE4BB",
                                                                         },
                                                                     },
-                                                                }}/>
+                                                                }} />
                                                         </Grid>
                                                     </Grid>
 
@@ -275,7 +312,7 @@ const StaffaugementationComponent = () => {
                                                         <Button
                                                             type="submit"
                                                             variant="contained"
-                                                            sx={{backgroundColor:Theme.palette.background.default,borderRadius:2,textTransform:"initial",fontFamily:"ADLaM Display"}}
+                                                            sx={{ backgroundColor: Theme.palette.background.default, borderRadius: 2, textTransform: "initial", fontFamily: "ADLaM Display" }}
                                                             fullWidth
                                                             disabled={isSubmitting}
                                                         >
