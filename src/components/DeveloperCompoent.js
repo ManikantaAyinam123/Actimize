@@ -5,15 +5,15 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { TextField, Button, } from '@mui/material';
 import { CheckBox, Toys } from '@mui/icons-material';
-
-
+ 
+ 
 const checkContent = [
     "React.js Developer", "React Native Developer", "Ruby Developer",]
-
-
+ 
+ 
 const DeveloperCompoent = () => {
     const [checkedItems, setCheckedItems] = useState([checkContent[0]]);
-
+ 
     const handleChange = (event) => {
         const { value, checked } = event.target;
         setCheckedItems((prevCheckedItems) =>
@@ -22,7 +22,7 @@ const DeveloperCompoent = () => {
                 : prevCheckedItems.filter((item) => item !== value)
         );
     };
-
+ 
     const validationSchema = Yup.object({
         FullName: Yup.string()
             .required('Name is required')
@@ -45,10 +45,10 @@ const DeveloperCompoent = () => {
             .required('Requirements field is required')
             .min(10, 'Requirements must be at least 10 characters long'),
     });
-
-
-
-
+ 
+ 
+ 
+ 
     const onSubmit = (values, actions) => {
         console.log("Form Values:", values);
         actions.resetForm();
@@ -57,8 +57,8 @@ const DeveloperCompoent = () => {
         "Access to experienced developers for specific project requirements.", "Developers skilled in the latest technologies for custom solutions.", "Flexibility to hire on a short-term or long-term basis.",
         "Developers who are a perfect fit for your business culture."
     ]
-
-
+ 
+ 
     const checkContentTwo = ["Developer", "Developer", "Developer", "Developer", "Developer", "Developer", "Developer"
     ]
     return (
@@ -75,7 +75,7 @@ const DeveloperCompoent = () => {
             >
                 <Grid item xs={12} sx={{ justifyContent: "center", marginX: "auto", border: `1px solid ${Theme.palette.background.border}`, borderRadius: 5, alignItems: "center", display: "flex" }}>
                     <Grid item sx={{ display: { xs: "block", md: "flex" }, justifyContent: { xs: "", sm: "space-between", } }} xs={12} >
-
+ 
                         <Grid item sx={{ textAlign: "start", alignItems: "center", marginTop: { xs: 0, sm: 6 } }} md={6} p={{ xs: 2, sm: 3 }}>
                             <Grid item sm={10} md={12} lg={10}>
                                 <Typography variant='caption1' sx={{ fontSize: { xs: "20px", sm: "40px", md: "35px", lg: "40px" }, lineHeight: { xs: "38px", sm: "64px" }, }}>Hire Developers </Typography><br />
@@ -84,7 +84,7 @@ const DeveloperCompoent = () => {
                             <Grid item my={{ xs: 2, sm: 3 }}>
                                 <Typography variant='caption2' sx={{ color: "#6A6A6A" }}>Our expert developers are ready to join your team and bring your ideas to life. Whether you need a front-end specialist, back-end expert, full-stack developer or other roles, we’ve got the right talent to meet your unique requirements. With years of experience our developers ensure your project is in the best hands.</Typography>
                             </Grid>
-
+ 
                             <Grid item xs={12} mt={{ xs: 0.5, sm: 1 }}>
                                 {content.map((item, index) => (
                                     <Grid item key={index} sx={{ display: "flex" }} gap={1} mb={1}>
@@ -97,10 +97,10 @@ const DeveloperCompoent = () => {
                                     </Grid>
                                 ))}
                             </Grid>
-
-
+ 
+ 
                         </Grid>
-
+ 
                         <Grid item py={3} sx={{ display: { xs: "none", md: "flex" } }}>
                             <Divider orientation='vertical' sx={{ backgroundColor: Theme.palette.background.border, width: "0.5px" }}></Divider>
                         </Grid>
@@ -238,7 +238,7 @@ const DeveloperCompoent = () => {
                                                         </Grid>
                                                     </Grid>
                                                     <Grid item xs={12}>
-
+ 
                                                         <Grid item xs={12} sx={{ display: { xs: "block", sm: "flex" } }}>
                                                             <FormControl sx={{ display: "block", flexDirection: "row", alignItems: "center", }} >
                                                                 <FormLabel id="expert-radio-group-label" sx={{ marginRight: 2, color: "#363636", fontFamily: "Inter" ,}}>
@@ -274,7 +274,7 @@ const DeveloperCompoent = () => {
                                                                             {errors.checkboxGroup}
                                                                         </Typography>
                                                                     )}
-
+ 
                                                                 </Grid>
                                                             </FormControl>
                                                         </Grid>
@@ -307,7 +307,7 @@ const DeveloperCompoent = () => {
                                                                 }} />
                                                         </Grid>
                                                     </Grid>
-
+ 
                                                     <Grid item xs={12} sx={{ justifyContent: "center" }}>
                                                         <Button
                                                             type="submit"
@@ -323,8 +323,8 @@ const DeveloperCompoent = () => {
                                             </Form>
                                         )}
                                     </Formik>
-
-
+ 
+ 
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -334,5 +334,5 @@ const DeveloperCompoent = () => {
         </>
     )
 }
-
+ 
 export default DeveloperCompoent

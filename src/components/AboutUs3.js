@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography, Grid, IconButton } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
+import Theme from '../Theme';
 
 const teamMembers = [
   { name: 'Name', role: 'Role', img: './assets/images/photo.svg' },
@@ -15,7 +16,7 @@ const teamMembers = [
 const AboutUs3 = () => {
   return (
     <Box sx={{display:'flex',justifyContent:'center'}}>
-    <Box sx={{ width:'90%', textAlign: 'center', py: 5, backgroundColor: '#F9F9F9' }}>
+    <Box sx={{ width:'90%', textAlign: 'center', py: 5,  }}>
       
       <Typography
          sx={{ fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px', md: '40px' }, lineHeight: { xs: '30px', md: '64px' }, color: '#363636', }}
@@ -23,7 +24,7 @@ const AboutUs3 = () => {
         The Actimize <span style={{ color: '#FF5733' }}>Team</span>
       </Typography>
       <Typography
-        sx={{ fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px', md: '40px' }, lineHeight: { xs: '30px', md: '64px' }, color: '#363636', }}
+        sx={{ fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px', md: '20px' }, lineHeight: { xs: '30px', md: '64px' },  color:Theme.palette.background.default}}
       >
         Innovators. Creators. Achievers.
       </Typography>
@@ -54,7 +55,7 @@ const AboutUs3 = () => {
                   }}
               />
               <Box sx={{display:'flex',justifyContent:'space-between'}}>
-              <Typography  sx={{ fontWeight: 'bold', mb: 0.5 }}>
+              <Typography  variant='caption1'sx={{ fontWeight: 'bold', mb: 0.5 }}>
                 {member.name}
               </Typography>
               <IconButton
@@ -66,7 +67,7 @@ const AboutUs3 = () => {
                 </IconButton>
               </Box>
               <Box sx={{display:'flex',justifyContent:'space-between'}}>
-              <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 0.5 }}>
+              <Typography variant="caption2" sx={{ fontWeight: 'bold', mb: 0.5 }}>
                 {member.role}
               </Typography>
               <IconButton
