@@ -48,7 +48,7 @@ const HireDeveloperFouthComponent = () => {
                     <path fill="#fff" d="m129.503 135.498l-25.738 74.79a85.8 85.8 0 0 0 24.233 3.495a85.7 85.7 0 0 0 28.486-4.863a7.5 7.5 0 0 1-.61-1.182zm73.766-48.66a66 66 0 0 1 .578 8.82c0 8.705-1.626 18.491-6.523 30.727l-26.203 75.759c25.503-14.872 42.657-42.501 42.657-74.148c.001-14.915-3.808-28.94-10.509-41.158" />
                     <path fill="#fff" d="M127.998 28C72.86 28 28 72.857 28 127.994c0 55.144 44.86 99.999 99.998 99.999c55.135 0 100.002-44.855 100.002-99.999C227.998 72.857 183.133 28 127.998 28m0 195.41c-52.61 0-95.413-42.804-95.413-95.416c0-52.609 42.802-95.409 95.413-95.409c52.607 0 95.407 42.8 95.407 95.409c0 52.612-42.8 95.416-95.407 95.416" />
                 </g>
-            </svg>, name: "wordPress"
+            </svg>, name: "WordPress."
         },
     ]
     const content2 = [
@@ -191,7 +191,7 @@ const HireDeveloperFouthComponent = () => {
                 </linearGradient>
                 <path fill="url(#deviconDotNeth)" d="M90.359 68.202c1.391-4.284 2.98-9.485 4.954-15.794c1.777-5.684 4.925-9.934 10.835-11.788l.456-.966c-9.636.577-14.14 5.479-16.405 12.738c-3.964 12.673-6.365 20.888-8.677 26.123c2.952-2.823 5.904-6.288 8.837-10.313" />
             </svg>, name: ".net"
-        }, { image: './assets/images/ror 1.png', name: "Rubu on Rails" }, {
+        }, { image: './assets/images/ror 1.png', name: "Ruby on Rails" }, {
             icon: <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 256 135">
                 <defs>
                     <radialGradient id="logosPhp0" cx=".837" cy="-125.811" r="363.057" gradientTransform="translate(76.464 81.918)scale(.463)" gradientUnits="userSpaceOnUse">
@@ -286,7 +286,7 @@ const HireDeveloperFouthComponent = () => {
                 <path fill="#ebe9dc" fill-rule="evenodd" d="m65.38 124.415l1.218-3.124l.251 3.696z" clip-rule="evenodd" />
                 <path fill="#cecdb7" fill-rule="evenodd" d="M67.464 110.898c-.196-.847.129-1.518.717-2.097l.337.23z" clip-rule="evenodd" />
                 <path fill="#4faa41" fill-rule="evenodd" d="m64.316 95.172l-.066-.011l-.066.01l.155-.559z" clip-rule="evenodd" />
-            </svg>, name: "MongooDB"
+            </svg>, name: "MongoDB"
         }, {
             icon: <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 128 128">
                 <defs>
@@ -591,12 +591,12 @@ const HireDeveloperFouthComponent = () => {
 
     return (
         <>
-            <Grid container justifyContent="center" mt={10}>
+            <Grid container justifyContent="center" mt={15}>
 
                <Grid item xs={12}>
                         <Grid item mb={5} sx={{ justifyContent: "center", textAlign: "center" }}>
                             <Grid item >
-                                <Typography variant='caption1' sx={{ fontSize: { xs: "20px", sm: "40px", md: "35px", lg: "40px" }, lineHeight: { xs: "38px", sm: "64px" }, }}>Expertise Across Various Technologies</Typography>
+                                <Typography variant='caption1' sx={{ fontSize: { xs: "20px", sm: "40px", md: "35px", lg: "40px" }, lineHeight: { xs: "38px", sm: "64px" }, }}>Expertise Across Various </Typography>
                                 <Typography variant='caption1' sx={{ color: Theme.palette.background.default, fontSize: { xs: "20px", sm: "40px", md: "35px", lg: "40px" }, lineHeight: { xs: "38px", sm: "64px" }, }}>Technologies</Typography>
                             </Grid>
                             <Grid item >
@@ -613,7 +613,7 @@ const HireDeveloperFouthComponent = () => {
                             sx={{
                                 display: "flex",
                                 flexWrap: "wrap",
-                                gap: { sm: 2.5, md: 3.3, lg: 5.2 },
+                                gap: { sm: 2.5, md: 3.3, lg: 5 },
                                 flexDirection: "row",
                                 alignItems: "center", margin: "auto",
                                 textAlign: "center",
@@ -636,11 +636,11 @@ const HireDeveloperFouthComponent = () => {
                                             border: `1px solid ${Theme.palette.background.border}`,
                                             borderRadius: 2,
                                             minWidth: { xs: "120px", sm: "70px", md: "90px", lg: "120px" },
-                                            minHeight: { xs: "100px", sm: "60px", md: "100px", lg: "120px" },
+                                            minHeight: { xs: "100px", sm: "60px", md: "90px", lg: "120px" },
                                         }} p={1.2}
                                     >
                                         {item.icon}
-                                        <Typography variant="caption2" sx={{ fontSize: { xs: "8px", md: "15px" } }}>{item.name}</Typography>
+                                        <Typography variant="caption2" sx={{ fontSize: { xs: "10px", md:"12px",lg: "15px" }  }}>{item.name}</Typography>
                                     </Grid>
                                 ))}
                             </Grid>
@@ -659,11 +659,11 @@ const HireDeveloperFouthComponent = () => {
                                             border: `1px solid ${Theme.palette.background.border}`,
                                             borderRadius: 2,
                                             minWidth: { xs: "120px", sm: "70px", md: "90px", lg: "120px" },
-                                            minHeight: { xs: "100px", sm: "60px", md: "100px", lg: "120px" },
+                                            minHeight: { xs: "100px", sm: "60px", md: "90px", lg: "120px" },
                                         }} p={1.2}
                                     >
                                         {item.icon}
-                                        <Typography variant="caption2" sx={{ fontSize: { xs: "8px", md: "15px" } }}>{item.name}</Typography>
+                                        <Typography variant="caption2" sx={{ fontSize: { xs: "10px", md:"12px",lg: "15px" }  }}>{item.name}</Typography>
                                     </Grid>
                                 ))}
                             </Grid>
@@ -682,11 +682,11 @@ const HireDeveloperFouthComponent = () => {
                                             border: `1px solid ${Theme.palette.background.border}`,
                                             borderRadius: 2,
                                             minWidth: { xs: "120px", sm: "70px", md: "90px", lg: "120px" },
-                                            minHeight: { xs: "100px", sm: "60px", md: "100px", lg: "120px" },
+                                            minHeight: { xs: "100px", sm: "60px", md: "90px", lg: "120px" },
                                         }} p={1.2}
                                     >
                                         {item.icon}
-                                        <Typography variant="caption2" sx={{ fontSize: { xs: "8px", md: "15px" } }}>{item.name}</Typography>
+                                        <Typography variant="caption2" sx={{ fontSize: { xs: "10px", md:"12px",lg: "15px" }  }}>{item.name}</Typography>
                                     </Grid>
                                 ))}
                             </Grid>
@@ -706,7 +706,7 @@ const HireDeveloperFouthComponent = () => {
                                             border: `1px solid ${Theme.palette.background.border}`,
                                             borderRadius: 2,
                                             minWidth: { xs: "120px", sm: "70px", md: "90px", lg: "120px" },
-                                            minHeight: { xs: "100px", sm: "60px", md: "100px", lg: "120px" },
+                                            minHeight: { xs: "100px", sm: "60px", md: "90px", lg: "120px" },
                                         }} p={1.2}
                                     >
 
@@ -715,7 +715,7 @@ const HireDeveloperFouthComponent = () => {
                                         ) : (
                                             item.icon
                                         )}
-                                        <Typography variant="caption2" sx={{ fontSize: { xs: "8px", md: "15px" } }}>{item.name}</Typography>
+                                        <Typography variant="caption2" sx={{ fontSize: { xs: "10px", md:"12px",lg: "15px" }  }}>{item.name}</Typography>
                                     </Grid>
                                 ))}
                             </Grid>
@@ -734,11 +734,11 @@ const HireDeveloperFouthComponent = () => {
                                             border: `1px solid ${Theme.palette.background.border}`,
                                             borderRadius: 2,
                                             minWidth: { xs: "120px", sm: "70px", md: "90px", lg: "120px" },
-                                            minHeight: { xs: "100px", sm: "60px", md: "100px", lg: "120px" },
+                                            minHeight: { xs: "100px", sm: "60px", md: "90px", lg: "120px" },
                                         }} p={1.2}
                                     >
                                         {item.icon}
-                                        <Typography variant="caption2" sx={{ fontSize: { xs: "8px", md: "15px" } }}>{item.name}</Typography>
+                                        <Typography variant="caption2" sx={{ fontSize: { xs: "10px", md:"12px",lg: "15px" }  }}>{item.name}</Typography>
                                     </Grid>
                                 ))}
                             </Grid>
@@ -757,11 +757,11 @@ const HireDeveloperFouthComponent = () => {
                                             border: `1px solid ${Theme.palette.background.border}`,
                                             borderRadius: 2,
                                             minWidth: { xs: "120px", sm: "70px", md: "90px", lg: "120px" },
-                                            minHeight: { xs: "100px", sm: "60px", md: "100px", lg: "120px" },
+                                            minHeight: { xs: "100px", sm: "60px", md: "90px", lg: "120px" },
                                         }} p={1.2}
                                     >
                                         {item.icon}
-                                        <Typography variant="caption2" sx={{ fontSize: { xs: "8px", md: "15px" } }}>{item.name}</Typography>
+                                        <Typography variant="caption2" sx={{ fontSize: { xs: "10px", md:"12px",lg: "15px" }  }}>{item.name}</Typography>
                                     </Grid>
                                 ))}
                             </Grid>
@@ -780,11 +780,11 @@ const HireDeveloperFouthComponent = () => {
                                             border: `1px solid ${Theme.palette.background.border}`,
                                             borderRadius: 2,
                                             minWidth: { xs: "120px", sm: "70px", md: "90px", lg: "120px" },
-                                            minHeight: { xs: "100px", sm: "60px", md: "100px", lg: "120px" },
+                                            minHeight: { xs: "100px", sm: "60px", md: "90px", lg: "120px" },
                                         }} p={1.2}
                                     >
                                         {item.icon}
-                                        <Typography variant="caption2" sx={{ fontSize: { xs: "8px", md: "15px" } }}>{item.name}</Typography>
+                                        <Typography variant="caption2" sx={{ fontSize: { xs: "10px", md:"12px",lg: "15px" }  }}>{item.name}</Typography>
                                     </Grid>
                                 ))}
                             </Grid>
@@ -803,11 +803,11 @@ const HireDeveloperFouthComponent = () => {
                                             border: `1px solid ${Theme.palette.background.border}`,
                                             borderRadius: 2,
                                             minWidth: { xs: "120px", sm: "70px", md: "90px", lg: "120px" },
-                                            minHeight: { xs: "100px", sm: "60px", md: "100px", lg: "120px" },
+                                            minHeight: { xs: "100px", sm: "60px", md: "90px", lg: "120px" },
                                         }} p={1.2}
                                     >
                                         {item.icon}
-                                        <Typography variant="caption2" sx={{ fontSize: { xs: "8px", md: "15px" } }}>{item.name}</Typography>
+                                        <Typography variant="caption2" sx={{ fontSize: { xs: "10px", md:"12px",lg: "15px" }  }}>{item.name}</Typography>
                                     </Grid>
                                 ))}
                             </Grid>
@@ -826,11 +826,11 @@ const HireDeveloperFouthComponent = () => {
                                             border: `1px solid ${Theme.palette.background.border}`,
                                             borderRadius: 2,
                                             minWidth: { xs: "120px", sm: "70px", md: "90px", lg: "120px" },
-                                            minHeight: { xs: "100px", sm: "60px", md: "100px", lg: "120px" },
+                                            minHeight: { xs: "100px", sm: "60px", md: "90px", lg: "120px" },
                                         }} p={1.2}
                                     >
                                         {item.icon}
-                                        <Typography variant="caption2" sx={{ fontSize: { xs: "8px", md: "15px" } }}>{item.name}</Typography>
+                                        <Typography variant="caption2" sx={{ fontSize: { xs: "10px", md:"12px",lg: "15px" } }}>{item.name}</Typography>
                                     </Grid>
                                 ))}
                             </Grid>

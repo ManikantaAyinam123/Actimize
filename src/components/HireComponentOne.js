@@ -21,8 +21,8 @@ const HireComponentOne = () => {
                 sx={{
                   px: 3,
                   py: 1,
-                  backgroundColor: '#fff4e6', // Light orange background
-                  borderRadius: '24px', // Rounded corners
+                  backgroundColor: '#fff4e6', 
+                  borderRadius: '24px', 
                 }}
               >
                 <Typography
@@ -36,13 +36,13 @@ const HireComponentOne = () => {
 
  
   <Grid item sm={8} md={6.5}lg={6} sx={{ textAlign: "center", display: "block",margin:"auto" ,}}>
-    <Typography variant="caption1" sx={{ fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '17px', md:"30px",lg: '38px',xl:"40px" }, lineHeight: { xs: '30px', md: '54px',lg:"64px" }, color: '#363636' }}>
+    <Typography variant="caption1" sx={{ fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '17px', md:"30px",lg: '38px',xl:"40px" }, lineHeight: { xs: '30px', md: '44px',lg:"50px" }, color: '#363636' }}>
       Hire Developers, Augment Teams, or Outsource Projects
     </Typography>
   </Grid>
 
  
-  <Grid item xs={12} sm={9} md={9} sx={{ textAlign: "justify", display: "block",margin:"auto" }}>
+  <Grid item xs={12} sm={9} md={9} sx={{ textAlign: "justify", display: "block",margin:"auto" ,marginTop:3}}>
     <Typography variant="caption2" sx={{fontSize:{xs:'12px',md:'16px',xl:"18px"},lineHeight:{xs:'10px',md:'20px',lg:"30px"},color:" #6A6A6A"}}>
       Empowering your business with expert developers, scalable team solutions, and seamless project outsourcing. Whether you're building a team, augmenting your workforce, or entrusting us with your next project, we deliver results driven by innovation and collaboration.
     </Typography>

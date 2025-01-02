@@ -34,7 +34,7 @@ const TrackerComponent = () => {
                         {content.map((item, index) => (
                             <React.Fragment key={index}>
                              
-                                <Grid item sm={3.3}md={3.5}lg={3.52}
+                                <Grid item sm={3.3}md={3.5}lg={3.4} xl={3.5}
                                 sx={{
                                     display: "flex",
                                     flexDirection: "column",
@@ -44,7 +44,7 @@ const TrackerComponent = () => {
                                     border: `1px solid ${Theme.palette.background.border}`,
                                     borderRadius: 5,
                                     backgroundColor: "white"
-                                }} gap={2} py={{xs:3,xl:5}}>
+                                }} gap={2} py={{xs:3,xl:5}} px={1}>
                                     <Box component="img" src={item.image} sx={{ maxWidth: "100%", display: "block", margin: "0 auto" }} />
                                     <Typography variant="caption1" sx={{ textAlign: "center" }}>
                                         {item.name}
@@ -66,14 +66,14 @@ const TrackerComponent = () => {
  
                             </React.Fragment>
                         ))}
-                          <Grid item sx={{ display: "flex", justifyContent: "center", alignItems: "center" }} sm={9}md={8.9} lg={12} xl={9}>
+                          <Grid item sx={{ display: "flex", justifyContent: "center", alignItems: "center" }} sm={9}md={8.9} lg={8.7} xl={8.8}>
                                         <Box component="img" src="/assets/images/Frame 95 --_ Frame 96.svg" sx={{ width: "100%", height: "100%" }} />
                                     </Grid>
  
                                     {contentOne.map((item, index) => (
                             <React.Fragment key={index}>
                              
-                                <Grid item sm={3.3}md={3.5}lg={3.52}  sx={{
+                                <Grid item sm={3.3}md={3.5}lg={3.4}  xl={3.5}sx={{
                                     display: "flex",
                                     flexDirection: "column",
                                     alignItems: "center",
@@ -82,7 +82,7 @@ const TrackerComponent = () => {
                                     border: `1px solid ${Theme.palette.background.border}`,
                                     borderRadius: 5,
                                     backgroundColor: "white"
-                                }} gap={2} py={3}>
+                                }} gap={2} py={3} px={1}>
                                     <Box component="img" src={item.image} sx={{ maxWidth: "100%", display: "block", margin: "0 auto" }} />
                                     <Typography variant="caption1" sx={{ textAlign: "center" }}>
                                         {item.name}

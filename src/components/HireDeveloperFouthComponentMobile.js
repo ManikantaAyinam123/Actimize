@@ -4,7 +4,7 @@ import Theme from '../Theme';
 
 
 const HireDeveloperFouthComponentMobile = ({ content1, content2, content3, content4, content5, content6, content7, content8, content9 }) => {
-  // Combine all content arrays into one
+
   const allContent = [
     ...content1,
     ...content2,
@@ -19,7 +19,7 @@ const HireDeveloperFouthComponentMobile = ({ content1, content2, content3, conte
 
   return (
     <>
-      <Grid container justifyContent="center" spacing={2}> {/* Use spacing here to apply gap between items */}
+      <Grid container justifyContent="center" spacing={2}> 
         {allContent.map((item, index) => (
           <Grid item xs={6} sx={{ display: { xs: "flex", sm: "none" } }} key={index}>
             <Grid
@@ -32,8 +32,8 @@ const HireDeveloperFouthComponentMobile = ({ content1, content2, content3, conte
                 borderRadius: 2,
                 textAlign: "center",
                 minHeight: "100px",
-                overflow: "hidden",  // Prevent overflow
-                wordWrap: "break-word", // Break long words
+                overflow: "hidden",   
+                wordWrap: "break-word",  
               }}
               mb={1}
               p={1.2}
@@ -44,14 +44,14 @@ const HireDeveloperFouthComponentMobile = ({ content1, content2, content3, conte
                   src={item.image}
                   alt={item.name}
                   sx={{
-                    maxWidth: "100%",  // Ensures images scale correctly
-                    height: "auto",    // Keeps the image's aspect ratio
+                    maxWidth: "100%",   
+                    height: "auto",    
                   }}
                 />
               ) : (
                 item.icon
               )}
-              <Typography variant="caption2" sx={{ fontSize: { xs: "8px", md: "15px" } }}>
+              <Typography variant="caption2" sx={{ fontSize: { xs: "15px", md: "15px" } }}>
                 {item.name}
               </Typography>
             </Grid>
