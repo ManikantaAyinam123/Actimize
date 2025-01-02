@@ -40,14 +40,52 @@ export default function ContactUs2() {
 
     return (
         <Box
+        sx={{
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          position: 'relative',
+        
+        
+        }}
+      >
+        <Box
             sx={{
                 p: 3,
 
                 borderRadius: "24px",
-                mt:'25px'
+                mt:'25px',
+                width:'90%',
 
             }}
         >
+             <Box
+        component="img"
+        src="../assets/images/orange2.svg" 
+        alt="Top Left SVG"
+        sx={{
+          position: 'absolute',
+          top: '-80px',  
+          left: '-180px', 
+          width: '500px', 
+          height: '500px', 
+          zIndex: -1, 
+        }}
+      />
+       <Box
+        component="img"
+        src="../assets/images/orange.svg" 
+        alt="Top Left SVG"
+        sx={{
+          position: 'absolute',
+          top: '-400px',  
+          right: '0px', 
+          width: 'auto', 
+          height: '800px', 
+          zIndex: -1, 
+         
+        }}
+      />
             <Grid container spacing={2}>
                 {contactCards.map((card, index) => (
                     <Grid item xs={12}  sm={6} key={index}>
@@ -114,6 +152,7 @@ export default function ContactUs2() {
                     </Grid>
                 ))}
             </Grid>
+        </Box>
         </Box>
     );
 }

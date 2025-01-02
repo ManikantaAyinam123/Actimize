@@ -116,7 +116,33 @@ const features = [
 export default function AboutUs2() {
   const theme = useTheme();
   return (
-    <Box sx={{textAlign: 'center', backgroundColor: '#FFFFFF', mt: { xs: '70px', md: '160px' } }}>
+    <Box
+    sx={{
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      position: 'relative',
+    
+    
+    }}
+  >
+    <Box sx={{textAlign: 'center', mt: { xs: '70px', md: '160px' },width:'90%'}}>
+       <Box
+        component="img"
+        src="../assets/images/orange2.svg" 
+        alt="Top Left SVG"
+        sx={{
+          position: 'absolute',
+          top: '200px',  
+          left: '-180px', 
+          width: '500px', 
+          height: '500px', 
+          zIndex: -1, 
+        }}
+      />
+
+      
+      
       {/* Section Title */}
       <Typography sx={{ fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px', md: '40px' }, lineHeight: { xs: '30px', md: '64px' }, color: '#363636', }}>
       Our Pillars of  <span style={{ color: theme.palette.background.default }}>Purpose</span>
@@ -176,6 +202,7 @@ export default function AboutUs2() {
           </Grid>
         ))}
       </Grid>
+    </Box>
     </Box>
   );
 }

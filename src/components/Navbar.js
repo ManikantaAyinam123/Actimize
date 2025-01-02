@@ -259,7 +259,9 @@ function Navbar(props) {
               fontWeight: '400',
               fontSize: { xs: '15px', sm: '15px', md: '20px' },
               lineHeight: '27px',
+              cursor:"pointer",
             }}
+            onClick={()=>handleNavigate()}
           >
             Actimize
           </Typography>

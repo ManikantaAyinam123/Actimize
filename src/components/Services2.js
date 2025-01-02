@@ -49,8 +49,19 @@ const services = [
 const Services2 = () => {
     const theme =useTheme();
   return (
+    <Box
+    sx={{
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      position: 'relative',
+    
+    
+    }}
+  >
    
-      <Grid container spacing={4} justifyContent="center" sx={{mt:'70px'}}>
+      <Grid container spacing={4} justifyContent="center" sx={{mt:'70px',width:'90%'}}>
+         
         {services.map((service, index) => (
           <Grid
             item
@@ -62,6 +73,7 @@ const Services2 = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+             
             }}
           >
             <Box
@@ -75,6 +87,7 @@ const Services2 = () => {
                   md: '20px 40px', 
                   lg: '24px 48px', 
                 },
+                 backgroundColor:'#FFFFFF'
               }}
             >
               <Typography  sx={{ fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '18px', sm: '20px', md: '24px' }, lineHeight: { xs: '20px',sm:'25px', md: '31px' }, color: '#363636', }}>
@@ -101,6 +114,7 @@ const Services2 = () => {
           </Grid>
         ))}
       </Grid>
+      </Box>
   
   );
 };

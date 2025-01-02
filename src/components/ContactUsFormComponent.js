@@ -74,7 +74,17 @@ const ContactUsFormComponent = () => {
  
     return (
         <>
-            <Grid container justifyContent="center">
+         <Box
+    sx={{
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+     
+    
+    
+    }}
+  >
+            <Grid container justifyContent="center" width={'90%'}>
                 <Grid item xs={12} sx={{ justifyContent: {xs:"",md:"center"}, display: {xs:"block",md:"flex"}, }}>
                     <Grid item md={6} sx={{ borderRadius: 5, backgroundColor: "white", border: `1px solid ${Theme.palette.background.border}` ,height:"auto",margin:"auto"}} p={3}>
                         {!modalThree ? <>
@@ -351,6 +361,7 @@ const ContactUsFormComponent = () => {
  
                     </Grid>
                 </Grid>
+                </Box>
             </>
             )
 }

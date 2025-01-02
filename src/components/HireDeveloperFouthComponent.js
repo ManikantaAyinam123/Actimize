@@ -591,7 +591,17 @@ const HireDeveloperFouthComponent = () => {
 
     return (
         <>
-            <Grid container justifyContent="center" mt={15}>
+          <Box
+    sx={{
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+    
+    
+    
+    }}
+  >
+            <Grid container justifyContent="center"  mt={15} sx={{width:'90%'}}>
 
                <Grid item xs={12}>
                         <Grid item mb={5} sx={{ justifyContent: "center", textAlign: "center" }}>
@@ -844,6 +854,7 @@ const HireDeveloperFouthComponent = () => {
                 )}
             </Grid>
             </Grid>
+            </Box>
         </>
     )
 }

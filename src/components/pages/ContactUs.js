@@ -10,8 +10,7 @@ import ContactUsFormComponent from '../ContactUsFormComponent'
 const ContactUs = () => {
   return (
     <>
-    <Grid container sx={{justifyContent:'center' ,width:'100%'}}>
-    <Grid item sx={{width:'90%'}}>
+ 
     <Navbar />
     <ContactUs1/>
     <ContactUs2/>
@@ -20,9 +19,7 @@ const ContactUs = () => {
 
    
  
- </Grid>
 
- </Grid>
  <Footer/>
  
    </>

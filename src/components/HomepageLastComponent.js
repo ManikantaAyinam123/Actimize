@@ -91,9 +91,19 @@ import { Box, Typography, Button } from '@mui/material';
 
 export default function HomepageLastComponent() {
     return (
+      <Box
+      sx={{
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        position: 'relative',
+      
+      
+      }}
+    >
         <Box
             sx={{
-
+                
                 display: 'flex',
                 flexDirection: { xs: 'column', md: 'row' },
                 alignItems: 'center',
@@ -105,7 +115,7 @@ export default function HomepageLastComponent() {
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
                 height: { xs: '200px', md: '300px' },
-                width: '100%',
+                width: '90%',
                 margin: '0 auto',
                 borderRadius: '8px',
 
@@ -113,6 +123,34 @@ export default function HomepageLastComponent() {
 
             }}
         >
+           <Box
+        component="img"
+        src="../assets/images/orange2.svg" 
+        alt="Top Left SVG"
+        sx={{
+          position: 'absolute',
+          top: '-150px',  
+          left: '-180px', 
+          width: '500px', 
+          height: '500px', 
+          zIndex: -1, 
+        }}
+      />
+       <Box
+        component="img"
+        src="../assets/images/orange.svg" 
+        alt="Top Left SVG"
+        sx={{
+          position: 'absolute',
+          top: '-20px',  
+          right: {xs:'0px'},
+          width: 'auto', 
+          height: '600px', 
+          zIndex: -1, 
+          display: { xs: 'none', sm: 'block' },
+         
+        }}
+      />
              {/* Left Content */}
       <Box
         sx={{
@@ -176,6 +214,7 @@ export default function HomepageLastComponent() {
           Let’s Talk
         </Button>
       </Box>
+        </Box>
         </Box>
     );
 }

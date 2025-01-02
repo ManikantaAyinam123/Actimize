@@ -6,7 +6,14 @@ import Theme from '../Theme'
 const HireComponentOne = () => {
   return (
     <>
-    <Grid container justifyContent="center"  >
+     <Box
+      sx={{
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+      }}
+    >
+    <Grid container justifyContent="center"  sx={{width:'90%'}} >
     <Grid container sx={{ display: "block", alignItems: "center", textAlign: "center", marginX: "auto", }} mt={{ xs: 12, md: 20 }}>
  
      <Box
@@ -52,6 +59,7 @@ const HireComponentOne = () => {
 
 
     </Grid>
+    </Box>
     </>
   )
 }

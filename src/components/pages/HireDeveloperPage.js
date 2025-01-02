@@ -13,16 +13,13 @@ import Footer from '../Footer'
 const HireDeveloperPage = () => {
   return (
     <>
-    <Grid container sx={{justifyContent:'center' ,width:'100%'}}>
-    <Grid item sx={{width:'90%'}}>
+   
         <Navbar />
     <HireComponentOne/>
     <HireDeveloperComponentTwo/>
     <HireDeveloperThirdComponent/>
     <HireDeveloperFouthComponent/>
-    </Grid>
-    
-    </Grid>
+   
     <Footer/>
     </>
   )
