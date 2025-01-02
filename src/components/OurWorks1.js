@@ -4,7 +4,44 @@ import { Box, Typography, Grid, useTheme } from '@mui/material';
 const OurWorks1 = () => {
     const theme =useTheme();
   return (
-    <Grid container sx={{ mt: '120px', justifyContent: 'center' }}>
+    <Box
+    sx={{
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      position: 'relative',
+    
+    
+    }}
+  >
+    <Grid container sx={{ mt: '120px', justifyContent: 'center',width:'90%' }}>
+       <Box
+        component="img"
+        src="../assets/images/orange2.svg" 
+        alt="Top Left SVG"
+        sx={{
+          position: 'absolute',
+          top: '100px',  
+          left: '-180px', 
+          width: '500px', 
+          height: '500px', 
+          zIndex: -1, 
+        }}
+      />
+       {/* <Box
+        component="img"
+        src="../assets/images/orange.svg" 
+        alt="Top Left SVG"
+        sx={{
+          position: 'absolute',
+          top: '0px',  
+          right: '-76px', 
+          width: 'auto', 
+          height: '800px', 
+          zIndex: -1, 
+         
+        }}
+      /> */}
       <Grid item sx={{ maxWidth: '1098px', textAlign: 'center' }}>
         {/* About Us Badge */}
         <Box
@@ -48,6 +85,7 @@ const OurWorks1 = () => {
    
       </Grid>
     </Grid>
+    </Box>
   );
 };
 

@@ -16,24 +16,18 @@ import HomeCardsComponent5 from '../HomeCardsComponent5'
 const HomePage = () => {
   return (
     <>
-    <Grid container sx={{justifyContent:'center' ,width:'100%'}}>
-      <Grid item sx={{width:'90%'}}>
+   
         <Navbar/>
     <Homecarousel1/>
     <HomeCardsComponent/>
     <HomeCardsComponent5/>
- 
-    
-    
     <HomeCardsComponent4/>
     <HomeVerticalSwiperComponent/>
     <LogosSliderComponent/>
     <HomepageLastComponent/>
 
    
-   </Grid>
- 
-   </Grid>
+  
      <Footer/>
      </>
   )

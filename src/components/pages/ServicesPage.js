@@ -13,8 +13,7 @@ const ServicesPage = () => {
   return (
   
           <>
-          <Grid container sx={{justifyContent:'center' ,width:'100%'}}>
-            <Grid item sx={{width:'90%'}}>
+       
               <Navbar/>
               <Services1/>
               <Services2/>
@@ -23,9 +22,7 @@ const ServicesPage = () => {
         
       
          
-         </Grid>
        
-         </Grid>
            <Footer/>
            </>
   )

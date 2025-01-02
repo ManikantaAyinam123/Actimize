@@ -4,14 +4,24 @@ import Theme from '../Theme'
  
 const OurWorksComponent = () => {
   const content = [
-    {image:"/assets/images/Actimize Studio.png",appName:"Actimize Studio",descp:"Lorem ipsum dolor sit amet consectetur. Nec ultrices etiam eros viverra tristique ullamcorper at nunc a. Placerat congue enim in convallis posuere."},
-    {image:"/assets/images/Akart(Mobile).png",appName:"Akart(Mobile)",descp:"Lorem ipsum dolor sit amet consectetur. Nec ultrices etiam eros viverra tristique ullamcorper at nunc a. Placerat congue enim in convallis posuere."},
-    {image:"/assets/images/Akart(web).png",appName:"Akart(web)",descp:"Lorem ipsum dolor sit amet consectetur. Nec ultrices etiam eros viverra tristique ullamcorper at nunc a. Placerat congue enim in convallis posuere."},
+    {image:"/assets/images/Actimize Studio.png",appName:"Actimize Studio",descp:"the user-friendly platform that brings your ideas to life! Customize and visualize your mobile or desktop apps in real time with intuitive tools. Effortlessly input app details like name, logo, color scheme, features, budget, and payment preferences. Enjoy live previews of your designs across devices, ensuring perfection every step of the way. Once submitted, our team reviews your project, shares a detailed budget estimate, and notifies you for approval. After your approval, development begins, turning your vision into reality!"},
+    {image:"/assets/images/Akart(Mobile).png",appName:"Akart(Mobile)",descp:"Experience seamless shopping on the go with the A-Kart Mobile App, your all-in-one eCommerce solution. Browse a wide range of products, enjoy personalized recommendations, and shop effortlessly with a user-friendly interface. Featuring secure payments, real-time order tracking, and exclusive mobile deals, A-Kart Mobile App brings the best of online shopping right to your fingertips. Just like having a digital mall in your pocket!"},
+    {image:"/assets/images/Akart(web).png",appName:"Akart(web)",descp:"Discover the ultimate online shopping destination with the A-Kart Web App. Whether you're exploring categories, comparing products, or snagging the best deals, the sleek and intuitive design ensures an enjoyable experience. Enjoy features like quick search, secure checkouts, and real-time order updates, making A-Kart Web App your trusted companion for convenient and hassle-free shopping. Everything you love about online retail, just a click away!"},
     // {image:"",appName:"",descp:""},
   ]
   return (
     <>
-      <Grid container justifyContent="center" sx={{mt:'120px'}}>
+   <Box
+    sx={{
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      position: 'relative',
+    
+    
+    }}
+  >
+      <Grid container justifyContent="center" sx={{mt:'120px',width:'90%'}}>
         <Grid item xs={12} sx={{ justifyContent: "center", textAlign: "center", algnItems: "center" }}>
           <Grid item xs={{ justifyContent: "center", textAlign: "center" }}>
             <Typography variant='caption1' sx={{fontSize: { xs: '18px', sm: '22px', md:"30px",lg: '38px',xl:"40px" },}}>Our </Typography><Typography variant='caption1' sx={{fontSize: { xs: '18px', sm: '22px', md:"30px",lg: '38px',xl:"40px" },color:Theme.palette.background.default}}>Products</Typography>
@@ -57,6 +67,7 @@ const OurWorksComponent = () => {
  
         </Grid>
       </Grid>
+      </Box>
     </>
   )
 }

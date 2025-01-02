@@ -4,7 +4,17 @@ import { Email, Phone, AccessTime, LocationOn } from "@mui/icons-material";
 
 const ContactUs4 = () => {
     return (
-        <Box sx={{ padding: 2 }}>
+        <Box
+        sx={{
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+        
+        
+        
+        }}
+      >
+        <Box sx={{ padding: 2,width:'90%' }}>
             <Grid container spacing={2}>
                 {/* Map Section */}
                 <Grid item xs={12} md={6}>
@@ -58,7 +68,7 @@ const ContactUs4 = () => {
                         <Box sx={{ display: 'flex',gap:'10px' }}>
                                 <Box
                                     component="img"
-                                    src='../assets/images/contactus3.svg'
+                                    src='../assets/images/contactus4.svg'
                                     alt='jhjh'
                                     sx={{
                                         width: { xs: "20px", sm: "27px" },
@@ -78,7 +88,7 @@ const ContactUs4 = () => {
                         <Box sx={{ display: 'flex',gap:'10px' }}>
                                 <Box
                                     component="img"
-                                    src='../assets/images/contactus3.svg'
+                                    src='../assets/images/contactus5.svg'
                                     alt='jhjh'
                                     sx={{
                                         width: { xs: "20px", sm: "27px" },
@@ -95,18 +105,18 @@ const ContactUs4 = () => {
                             <Typography sx={{mt: '10px', fontFamily: "'Ruwudu',serif", fontWeight: '400', fontSize: { xs: '13px', sm: '15px', md: '16px',lg:'20px' }, lineHeight: { xs: '25px', md: '30px' }, color: '#6A6A6A', }}>+91 6305196668</Typography>
                         </Box>
                     </Grid>
-                    <Grid item xs={12}>
-                    <Box sx={{border: '1px solid #FFE4BB',padding:'24px 38px',borderRadius:'24px' }}>
+                    <Grid item xs={12} sm={11.4}>
+                    <Box sx={{border: '1px solid #FFE4BB',padding:'24px 20px',borderRadius:'24px' }}>
                         <Box sx={{ display: 'flex', gap:'10px'}}>
                                 <Box
                                     component="img"
-                                    src='../assets/images/contactus3.svg'
+                                    src='../assets/images/contactus6.svg'
                                     alt='jhjh'
                                     sx={{
                                         width: { xs: "20px", sm: "27px" },
                                         height: { xs: "25px", sm: "33px" },
                                         objectFit: "contain",
-                                        maxWidth: "100%",
+                                        
                                     }}
                                 />
                                 <Typography sx={{ fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '18px', sm: '20px', md: '24px' }, lineHeight: { xs: '25px', md: '32px' }, color: '#363636', }}>
@@ -121,6 +131,7 @@ const ContactUs4 = () => {
             </Grid>
             </Grid>
     </Box >
+    </Box>
   );
 };
 

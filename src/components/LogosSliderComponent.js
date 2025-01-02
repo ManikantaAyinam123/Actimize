@@ -23,9 +23,19 @@ export default function LogosSliderComponent() {
   const theme = useTheme();
   return (
     <Box
+    sx={{
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+  
+    
+    
+    }}
+  >
+    <Box
       sx={{
         textAlign: 'center',
-        backgroundColor: '#FFFFFF',
+         width:'90%',
         mt: { xs: '250px', md: '160px' },
         p: { xs: 2, md: 4 },
       }}
@@ -86,6 +96,7 @@ export default function LogosSliderComponent() {
           </SwiperSlide>
         ))}
       </Swiper>
+    </Box>
     </Box>
   );
 }

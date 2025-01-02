@@ -4,7 +4,17 @@ import { Box, Typography, Grid, useTheme } from '@mui/material';
 const ContactUs1 = () => {
     const theme =useTheme();
   return (
-    <Grid container sx={{ mt: '120px', justifyContent: 'center' }}>
+    <Box
+    sx={{
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+ 
+    
+    
+    }}
+  >
+    <Grid container sx={{ mt: '120px', justifyContent: 'center',width:'90%' }}>
       <Grid item sx={{ maxWidth: '1098px', textAlign: 'center' }}>
         {/* About Us Badge */}
         <Box
@@ -49,6 +59,7 @@ const ContactUs1 = () => {
    
       </Grid>
     </Grid>
+    </Box>
   );
 };
 

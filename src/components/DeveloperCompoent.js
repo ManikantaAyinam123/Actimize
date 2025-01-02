@@ -101,7 +101,7 @@ const DeveloperCompoent = () => {
                     
                 }}
             >
-                <Grid item xs={12} sx={{ justifyContent: "center", marginX: "auto", border: `2px solid ${Theme.palette.background.border}`, borderRadius: 5, alignItems: "center", display: "flex" }}>
+                <Grid item xs={12} sx={{ justifyContent: "center", marginX: "auto", border: `2px solid ${Theme.palette.background.border}`, borderRadius: 5, alignItems: "center", display: "flex", backgroundColor:'#FFFFFF' }}>
                     <Grid item sx={{ display: { xs: "block", md: "flex" }, justifyContent: { xs: "", sm: "space-between", } }} xs={12} >
 
                        <Grid item sx={{ textAlign: "start", alignItems: "center", marginTop: { xs: 0, sm: 5 } }} md={6} p={{ xs: 2, sm: 5 }}>

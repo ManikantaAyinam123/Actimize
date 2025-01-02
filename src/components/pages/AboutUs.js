@@ -11,8 +11,7 @@ import Navbar from '../Navbar'
 const AboutUs = () => {
   return (
     <>
-    <Grid container sx={{justifyContent:'center' ,width:'100%'}}>
-    <Grid item sx={{width:'90%'}}>
+   
     <Navbar />
     <AboutUs1/>
     <HomeCardsComponent3/>
@@ -20,9 +19,7 @@ const AboutUs = () => {
     <AboutUs2/>
     <AboutUs3/>
  
- </Grid>
-
- </Grid>
+ 
  <Footer/>
  
    </>

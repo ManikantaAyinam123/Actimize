@@ -52,7 +52,17 @@ const features = [
 export default function HomeCardsComponent5() {
     const theme = useTheme();
     return (
-        <Box sx={{ textAlign: "center", mt: { xs: '70px', md: '160px' } }}>
+        <Box
+        sx={{
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+        
+        
+        
+        }}
+      >
+        <Box sx={{ textAlign: "center", mt: { xs: '70px', md: '160px' },width:'90%' }}>
             {/* Title */}
             <Typography sx={{ fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px', md: '40px' }, lineHeight: { xs: '30px', md: '64px' }, color: '#363636', }}>
                 Redefining Web & Mobile{" "}
@@ -473,6 +483,7 @@ export default function HomeCardsComponent5() {
                 </Grid>
             </Grid>
 
+        </Box>
         </Box>
 
     );

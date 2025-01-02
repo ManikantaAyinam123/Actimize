@@ -101,7 +101,7 @@ const StaffaugementationComponent = () => {
                     alignItems: 'center',
                 }}
             >
-                <Grid item xs={12} sx={{ justifyContent: "center", marginX: "auto", border: `1px solid ${Theme.palette.background.border}`, borderRadius: 5, alignItems: "center", display: "flex" }}>
+                <Grid item xs={12} sx={{ justifyContent: "center", marginX: "auto", border: `1px solid ${Theme.palette.background.border}`, borderRadius: 5, alignItems: "center", display: "flex", backgroundColor:'#FFFFFF' }}>
                     <Grid item sx={{ display: { xs: "block", md: "flex" }, justifyContent: { xs: "", sm: "space-between", } }} xs={12} >
 
                      <Grid item md={6} p={{ xs: 2, sm: 5 }}>

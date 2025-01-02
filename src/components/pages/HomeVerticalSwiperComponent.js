@@ -9,17 +9,17 @@ import Theme from '../../Theme';
  
 const testimonials = [
   {
-    quote: "“We are incredibly grateful to Actimize for their exceptional work. They took the time to understand our unique needs and delivered a custom solution that sets us apart from our competitors. It has become a valuable asset to our business.”",
-    author: "Jacob",
+    quote: "Working with Actimize has been a game-changer for our business. They developed ourapplication, and the results have been phenomenal. The site is now user-friendly, mobile-responsive, and has significantly increased our online conversions. Thank you for a job well done!",
+    author: "Anup",
     role: "CEO & Co-Founder",
   },
   {
-    quote: "Their solutions have completely transformed our business. The team was professional, attentive, and delivered beyond our expectations.",
+    quote: "We are incredibly grateful to Actimize for their exceptional work.They took the time to understand our unique needs and delivered a custom solution that sets us apart from ourcompetitors. It has become a valuable asset to our business.",
     author: "Sophia",
     role: "Marketing Director",
   },
   {
-    quote: "Actimize's dedication to quality and innovation has helped us achieve remarkable success. We couldn't be happier with their work.",
+    quote: "Actimize Software Solutions is a team of professionals who truly understand web development.They built a custom website for our e-commerce store, guided us through every step of the processand the user experience is exceptional. Our sales have surged since the launch, and we owe it all totheir expertise",
     author: "Liam",
     role: "CTO",
   },
@@ -28,13 +28,23 @@ const testimonials = [
 const HomeVerticalSwiperComponent = () => {
   const theme =useTheme();
   return (
-    <Grid container sx={{ mt: '160px', height: 'auto' }}>
+    <Box
+    sx={{
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      position: 'relative',
+    
+    
+    }}
+  >
+    <Grid container sx={{ mt: '160px', height: 'auto',width:'90%' }}>
       {/* Left Static Content */}
       <Grid item xs={12} md={6} lg={7} gap={2} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <Box
           sx={{
            
-            backgroundColor: '#ffffffff',
+           
             height: '100%',
             width:'100%',
             marginBottom: '16px',
@@ -186,6 +196,7 @@ const HomeVerticalSwiperComponent = () => {
         </Swiper>
       </Grid>
     </Grid>
+    </Box>
   );
 };
  

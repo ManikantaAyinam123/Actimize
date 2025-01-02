@@ -40,7 +40,44 @@ const HomeCardsComponent3 = () => {
   ];
 
   return (
-    <Grid container spacing={4} justifyContent="center" sx={{mt: { xs: '70px', md: '160px' }}}>
+    <Box
+    sx={{
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      position: 'relative',
+    
+    
+    }}
+  >
+    <Grid container spacing={4} justifyContent="center" sx={{mt: { xs: '70px', md: '160px' ,width:'90%'}}}>
+       <Box
+        component="img"
+        src="../assets/images/orange2.svg" 
+        alt="Top Left SVG"
+        sx={{
+          position: 'absolute',
+          top: '0px',  
+          left: '-180px', 
+          width: '500px', 
+          height: '600px', 
+          zIndex: -1, 
+        }}
+      />
+       <Box
+        component="img"
+        src="../assets/images/orange.svg" 
+        alt="Top Left SVG"
+        sx={{
+          position: 'absolute',
+          top: '-250px',  
+          right: {xs:'0px'},
+          width: 'auto', 
+          height: '500px', 
+          zIndex: -1, 
+         
+        }}
+      />
       {features.map((feature, index) => (
         <Grid item xs={12} sm={6} md={4} lg={4} key={index}>
           <Box
@@ -101,6 +138,7 @@ const HomeCardsComponent3 = () => {
         </Grid>
       ))}
     </Grid>
+    </Box>
   );
 };
 

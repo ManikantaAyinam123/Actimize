@@ -19,7 +19,17 @@ const HireDeveloperThirdComponent = () => {
     ]
     return (
         <>
-            <Grid container justifyContent="center">
+         <Box
+    sx={{
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      position: 'relative',
+    
+    
+    }}
+  >
+            <Grid container justifyContent="center" sx={{width:'90%'}}>
                 <Grid item xs={12} sx={{ justifyContent: "center", alignItems: "center", marginX: "auto" ,textAlign:"center"}} mt={15}>
                     <Grid item >
                         <Typography variant='caption1' sx={{ fontSize: { xs: "20px", sm: "40px", md: "35px", lg: "40px" }, lineHeight: { xs: "38px", sm: "64px" }, }}>Why Choose </Typography>
@@ -299,6 +309,7 @@ const HireDeveloperThirdComponent = () => {
                     </Grid>
                 </Grid>
             </Grid>
+            </Box>
         </>
     )
 }

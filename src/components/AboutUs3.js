@@ -15,7 +15,32 @@ const teamMembers = [
 
 const AboutUs3 = () => {
   return (
-    <Box sx={{display:'flex',justifyContent:'center'}}>
+    <Box
+    sx={{
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      position: 'relative',
+    
+    
+    }}
+  >
+    <Box sx={{display:'flex',justifyContent:'center',width:'90%',mt:'120px'}}>
+      
+       <Box
+        component="img"
+        src="../assets/images/orange.svg" 
+        alt="Top Left SVG"
+        sx={{
+          position: 'absolute',
+          top: '-100px',  
+          right: '0px', 
+          width: 'auto', 
+          height: '800px', 
+          zIndex: -1, 
+         
+        }}
+      />
     <Box sx={{ width:'90%', textAlign: 'center', py: 5,  }}>
       
       <Typography
@@ -40,7 +65,7 @@ const AboutUs3 = () => {
                 overflow: 'hidden',
                 
                 padding: 2,
-                backgroundColor: '#fff',
+               
               }}
             >
               <Box
@@ -84,6 +109,7 @@ const AboutUs3 = () => {
           </Grid>
         ))}
       </Grid>
+    </Box>
     </Box>
     </Box>
   );

@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { NavLink, Outlet } from 'react-router-dom';
 import Theme from '../Theme';
 import { useEffect, useState } from 'react';
@@ -50,7 +50,44 @@ const HireDeveloperComponentTwo = () => {
 
 
   return (
-    <Grid container justifyContent="center">
+    <Box
+    sx={{
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      position: 'relative',
+    
+    
+    }}
+  >
+     <Box
+        component="img"
+        src="../assets/images/orange2.svg" 
+        alt="Top Left SVG"
+        sx={{
+          position: 'absolute',
+          top: '-150px',  
+          left: '-180px', 
+          width: '500px', 
+          height: '500px', 
+          zIndex: -5, 
+        }}
+      />
+       <Box
+        component="img"
+        src="../assets/images/orange.svg" 
+        alt="Top Left SVG"
+        sx={{
+          position: 'absolute',
+          top: '350px',  
+          right: '0px', 
+          width: 'auto', 
+          height: '800px', 
+          zIndex: -1, 
+         
+        }}
+      />
+    <Grid container justifyContent="center" sx={{width:'90%'}}>
       <Grid item xs={12} mt={12} sx={{ justifyContent: "center" }}>
         <Grid item justifyContent={{ xs: "center", sm: "start" }} display="flex" spacing={0} xs={11} sm={11} md={11.5} sx={{ marginX: "auto" }}>
           {links.map((link, index) => (
@@ -90,6 +127,7 @@ const HireDeveloperComponentTwo = () => {
       {developer && <DeveloperCompoent />}
       {staff && <StaffaugementationComponent />}
     </Grid>
+    </Box>
 
   );
 };

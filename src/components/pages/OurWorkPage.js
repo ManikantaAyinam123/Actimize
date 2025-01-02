@@ -6,23 +6,22 @@ import OurWorks1 from '../OurWorks1'
 import OurWorks2 from '../OurWorks2'
 import TrackerComponent from '../TrackerComponent'
 import OurWorksComponent from '../OurWorksComponent'
+import BackgroundColor from '../BackgroundColor'
 
 const OurWorkPage = () => {
   return (
     <>
-    <Grid container sx={{justifyContent:'center' ,width:'100%'}}>
-    <Grid item sx={{width:'90%'}}>
+   
       <Navbar/>
       <OurWorks1/>
       <OurWorks2/>
       <OurWorksComponent/>
       <TrackerComponent/>
+      {/* <BackgroundColor/> */}
  
 
  
- </Grid>
 
- </Grid>
    <Footer/>
    </>
   )
