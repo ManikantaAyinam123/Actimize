@@ -7,104 +7,106 @@ import { TextField, Button, } from '@mui/material';
 import { CheckBox, Toys } from '@mui/icons-material';
 import emailjs from 'emailjs-com'
 import { toast } from 'react-toastify';
- 
- 
+import ModalComponent from './ModalComponent';
+
+
 const checkContent = [
-    "React.js Developer", "React Native Developer", "Ruby Developer",]
- 
- 
- 
+    "React.js Developer", "React Native Developer", "Ruby Developer", "Manual QA", "UI/UX Designer", "Frontend Developers", "Backend Developers", "MERN Stack Developers", "MEAN Stack Developers", "Others"]
+
+
+
 const StaffaugementationComponent = () => {
-      const [checkedItems, setCheckedItems] = useState([checkContent[0]]);
- 
-      const handleChange = (event) => {
-          const { value, checked } = event.target;
-          setCheckedItems((prevCheckedItems) =>
-              checked
-                  ? [...prevCheckedItems, value] // Add item to the array if checked
-                  : prevCheckedItems.filter((item) => item !== value) // Remove item if unchecked
-          );
-      };
- 
-      const validationSchema = Yup.object({
-             FullName: Yup.string()
-                 .required('Name is required')
-                 .min(3, 'Name must be at least 3 characters long')
-                 .matches(/^[A-Za-z]+$/, 'Name must contain only alphabets'),
-             CompanyName: Yup.string()
-                 .required('Company Name is required')
-                 .min(3, 'Name must be at least 3 characters long')
-                 .matches(/^[A-Za-z]+$/, 'Name must contain only alphabets'),
-             email: Yup.string()
-                 .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Email must be a valid email address')
-                 .required('Email is required'),
-             PhoneNumber: Yup.string()
-                 .required('Mobile number is required')
-                 .matches(/^[0-9]{10}$/, 'Mobile number must be exactly 10 digits'),
-             checkboxGroup: Yup.array()
-                 .min(1, 'At least one checkbox must be selected')
-                 .required('This field is required'),
-             requirements: Yup.string()
-                 .required('Requirements field is required')
-                 .min(10, 'Requirements must be at least 10 characters long'),
-         });
- 
- 
- 
-      const onSubmit = (values, actions) => {
-          console.log("Form Values:", values);
-          actions.resetForm();
-          const  service_id = 'service_okycvj8'
-          const template_id= 'template_izpnvkk'
-          const user_id = 'H9mKbRUHuFIU-z7Bh'
-          const template_params = {
-               from_name: values.fname + values.lname,
-               from_email:values.email,
-               from_number:values.phone,
-               message : values.message,
-               from_citizenship:values.citizenship,
-               from_donationFrequency:values.donationFrequency,
-               from_donationAmount:values.donationAmount,
-               to_name:"Charity Foundation"
-           }
-     
- 
- 
-       
-      emailjs.send(service_id , template_id , template_params , user_id)
-      .then((response)=>{
-       console.log("Email sent successfully",response)
-       toast.success("Your request sent successfully!");
-      })
-      .catch((error)=>{
-       console.log("error sending Email",error)
-       toast.error("Error sending request. Please try again.");
-      })
-      };
-      const content = [
-          "Augment your team with qualified experts.", "Enhance capabilities for both short-term and long-term projects.", "Access a pool of developers across various tech stacks.",
-          "A cost-effective solution for scaling your team without hiring full-time employees."
-      ]
- 
- 
-      const checkContentTwo = ["Developer", "Developer", "Developer", "Developer", "Developer", "Developer", "Developer"
-      ]
-  return (
-    <>
-     <Grid
-  container
-  justifyContent="center"
-  sx={{
-    marginX: 'auto',
-    display: 'flex',
-    // Optionally, use these to ensure alignment in both axes
-    alignItems: 'center',
-  }}
->
-                <Grid item xs={12} sx={{ justifyContent:"center",marginX:"auto",border: `1px solid ${Theme.palette.background.border}`, borderRadius: 5 ,alignItems:"center",display:"flex"}}>
-                    <Grid item sx={{ display: {xs:"block",md:"flex"}, justifyContent: {xs:"",sm:"space-between",}  }} xs={12} >
-                       
-                        <Grid item md={6} p={3}>
+    const [checkedItems, setCheckedItems] = useState([checkContent[0]]);
+    const [modalTwo, setModalTwo] = useState(false)
+
+    const handleChange = (event) => {
+        const { value, checked } = event.target;
+        setCheckedItems((prevCheckedItems) =>
+            checked
+                ? [...prevCheckedItems, value] // Add item to the array if checked
+                : prevCheckedItems.filter((item) => item !== value) // Remove item if unchecked
+        );
+    };
+
+    const validationSchema = Yup.object({
+        FullName: Yup.string()
+            .required('Name is required')
+            .min(3, 'Name must be at least 3 characters long')
+            .matches(/^[A-Za-z\s]+$/, 'Name must contain only alphabets'),
+        CompanyName: Yup.string()
+            .required('Company Name is required')
+            .min(3, 'Name must be at least 3 characters long')
+            .matches(/^[A-Za-z\s]+$/, 'Name must contain only alphabets'),
+        email: Yup.string()
+            .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Email must be a valid email address')
+            .required('Email is required'),
+        PhoneNumber: Yup.string()
+            .required('Mobile number is required')
+            .matches(/^[9876][0-9]{9}$/, 'Mobile number must be exactly 10 digits and start with 9, 8, 7, or 6'),
+        checkboxGroup: Yup.array()
+            .min(1, 'Please select at least one role')
+            .required('This field is required'),
+        requirements: Yup.string()
+            .required('Requirements field is required')
+            .min(10, 'Requirements must be at least 10 characters long'),
+    });
+
+
+
+    const onSubmit = (values, actions) => {
+        console.log("Form Values:", values);
+        actions.resetForm();
+        const service_id = 'service_nnu1lu4'
+        const template_id = 'template_p2n7w53'
+        const user_id = 'H9mKbRUHuFIU-z7Bh'
+        const template_params = {
+            from_name: values.FullName,
+            from_companyName: values.CompanyName,
+            from_email: values.email,
+            from_number: values.PhoneNumber,
+            message: values.requirements,
+            from_Expert: values.checkboxGroup,
+            to_name: "Actimize"
+        }
+        emailjs.send(service_id, template_id, template_params, user_id)
+            .then((response) => {
+                console.log("Email sent successfully", response)
+                setModalTwo(true)
+                toast.success("Your request sent successfully!");
+            })
+            .catch((error) => {
+                console.log("error sending Email", error)
+                toast.error("Error sending request. Please try again.");
+            })
+
+    };
+
+    const content = [
+        "Augment your team with qualified experts.", "Enhance capabilities for both short-term and long-term projects.", "Access a pool of developers across various tech stacks.",
+        "A cost-effective solution for scaling your team without hiring full-time employees."
+    ]
+
+
+    const checkContentTwo = ["Developer", "Developer", "Developer", "Developer", "Developer", "Developer", "Developer"
+    ]
+    return (
+        <>
+            <Grid
+                container
+                justifyContent="center"
+                sx={{
+                    marginX: 'auto',
+                    display: 'flex',
+                    // Optionally, use these to ensure alignment in both axes
+                    alignItems: 'center',
+                }}
+            >
+                <Grid item xs={12} sx={{ justifyContent: "center", marginX: "auto", border: `1px solid ${Theme.palette.background.border}`, borderRadius: 5, alignItems: "center", display: "flex" }}>
+                    <Grid item sx={{ display: { xs: "block", md: "flex" }, justifyContent: { xs: "", sm: "space-between", } }} xs={12} >
+
+                     <Grid item md={6} p={{ xs: 2, sm: 5 }}>
+                     { modalTwo ? <ModalComponent/> :
+                     <>
                             <Grid item>
                                 <Typography variant='caption1' sx={{ fontSize: { xs: "20px" }, lineHeight: "40px" }}>Connect  with Us</Typography>
                             </Grid>
@@ -113,14 +115,14 @@ const StaffaugementationComponent = () => {
                             </Grid>
                             <Grid container justifyContent="center">
                                 <Grid item xs={12}>
-                                <Formik
+                                    <Formik
                                         initialValues={{
                                             FullName: '',
                                             CompanyName: '',
                                             email: '',
                                             PhoneNumber: '',
-                                            checkboxGroup: [],  
-                                            requirements: '',  
+                                            checkboxGroup: [],
+                                            requirements: '',
                                         }}
                                         validationSchema={validationSchema}
                                         onSubmit={onSubmit}
@@ -129,12 +131,12 @@ const StaffaugementationComponent = () => {
                                             <Form>
                                                 <Grid container spacing={2} sx={{ justifyContent: "center" }}>
                                                     <Grid item sx={{ display: { xs: "block", sm: "flex" } }} xs={12} gap={2}>
-                                                        <Grid item sm={6}>
-                                                            <Grid item><Typography variant='caption2' sx={{ color: "#363636" }}>Full Name</Typography></Grid>
+                                                        <Grid item sm={6} >
+                                                            <Grid item mb={0.5}><Typography variant='caption3' sx={{ color: "#363636" }}>Full Name</Typography></Grid>
                                                             <Field
                                                                 name="FullName"
                                                                 as={TextField}
-                                                                label="Full Name"
+                                                                placeholder="Full Name"
                                                                 variant="outlined"
                                                                 fullWidth
                                                                 size="small"
@@ -154,14 +156,15 @@ const StaffaugementationComponent = () => {
                                                                     },
                                                                 }}
                                                             />
+
                                                         </Grid>
                                                         <Grid item sm={6}>
-                                                            <Grid item><Typography variant='caption2' sx={{ color: "#363636" }}>Company Name</Typography></Grid>
+                                                            <Grid item mb={0.5}><Typography variant='caption3' sx={{ color: "#363636" }}>Company Name</Typography></Grid>
                                                             <Field
                                                                 name="CompanyName"
                                                                 as={TextField}
-                                                             
-                                                                label="Company Name"
+
+                                                                placeholder="Company Name"
                                                                 variant="outlined"
                                                                 fullWidth
                                                                 size="small"
@@ -185,11 +188,11 @@ const StaffaugementationComponent = () => {
                                                     </Grid>
                                                     <Grid item sx={{ display: { xs: "block", sm: "flex" } }} xs={12} gap={2}>
                                                         <Grid item sm={6}>
-                                                            <Grid item><Typography variant='caption2' sx={{ color: "#363636" }}>Work Email Address</Typography></Grid>
+                                                            <Grid item mb={0.5}><Typography variant='caption3' sx={{ color: "#363636" }}>Work Email Address</Typography></Grid>
                                                             <Field
                                                                 name="email"
                                                                 as={TextField}
-                                                                label="Your work email address"
+                                                                placeholder="Your work email address"
                                                                 variant="outlined"
                                                                 fullWidth
                                                                 size="small"
@@ -211,11 +214,11 @@ const StaffaugementationComponent = () => {
                                                             />
                                                         </Grid>
                                                         <Grid item sm={6}>
-                                                            <Grid item><Typography variant='caption2' sx={{ color: "#363636" }}>Phone Number</Typography></Grid>
+                                                            <Grid item mb={0.5}><Typography variant='caption3' sx={{ color: "#363636", fontFamily: "Inter" }}>Phone Number</Typography></Grid>
                                                             <Field
                                                                 name="PhoneNumber"
                                                                 as={TextField}
-                                                                label="Your Phone Number"
+                                                                placeholder="Your Phone Number"
                                                                 variant="outlined"
                                                                 fullWidth
                                                                 size="small"
@@ -230,24 +233,32 @@ const StaffaugementationComponent = () => {
                                                                         "&.Mui-focused fieldset": {
                                                                             borderColor: "#FFE4BB",
                                                                         },
+
+                                                                        height: "40px",
+                                                                        padding: "0 14px",
+                                                                    },
+                                                                    "& .MuiInputBase-input": {
+                                                                        height: "1.6em",
+                                                                        padding: "10px 14px"
                                                                     },
                                                                 }}
                                                                 error={touched.PhoneNumber && Boolean(errors.PhoneNumber)}
                                                                 helperText={touched.PhoneNumber && errors.PhoneNumber}
                                                             />
+
                                                         </Grid>
                                                     </Grid>
                                                     <Grid item xs={12}>
- 
+
                                                         <Grid item xs={12} sx={{ display: { xs: "block", sm: "flex" } }}>
                                                             <FormControl sx={{ display: "block", flexDirection: "row", alignItems: "center", }} >
-                                                                <FormLabel id="expert-radio-group-label" sx={{ marginRight: 2, color: "#363636", fontFamily: "Inter" ,}}>
+                                                                <FormLabel id="expert-radio-group-label" sx={{ color: "#363636", fontFamily: "Inter", }}>
                                                                     Choose your Expert
                                                                 </FormLabel>
                                                                 <Grid container >
-                                                                    <Grid container spacing={2}>
-                                                                        {checkContent.concat(checkContentTwo).map((item, index) => (
-                                                                            <Grid item key={index} xs={6} sm={4}>
+                                                                    <Grid container >
+                                                                        {checkContent.map((item, index) => (
+                                                                            <Grid item key={index} xs={12} sm={6} md={12} lg={6} sx={{}}>
                                                                                 <FormControlLabel
                                                                                     control={
                                                                                         <Field
@@ -264,8 +275,15 @@ const StaffaugementationComponent = () => {
                                                                                         />
                                                                                     }
                                                                                     label={item}
-                                                                                    sx={{ fontSize: "12px", color: Theme.palette.background.descp }}
+                                                                                    labelPlacement="end"
+                                                                                    sx={{
+                                                                                        '& .MuiFormControlLabel-label': {
+                                                                                            fontSize: '14px',
+                                                                                            color: Theme.palette.background.descp,
+                                                                                        },
+                                                                                    }}
                                                                                 />
+
                                                                             </Grid>
                                                                         ))}
                                                                     </Grid>
@@ -274,17 +292,17 @@ const StaffaugementationComponent = () => {
                                                                             {errors.checkboxGroup}
                                                                         </Typography>
                                                                     )}
- 
+
                                                                 </Grid>
                                                             </FormControl>
                                                         </Grid>
                                                     </Grid>
                                                     <Grid item xs={12}>
-                                                        <Grid item><Typography variant='caption2' sx={{ color: "#363636" }}>Your Requirements</Typography></Grid>
+                                                        <Grid item mb={0.5}><Typography variant='caption3' sx={{ color: "#363636" }}>Your Requirements</Typography></Grid>
                                                         <Grid item xs={12}>
                                                             <Field rows={6} name="requirements"
                                                                 as={TextField}
-                                                                label="Write your Requirements"
+                                                                placeholder="Write your requirements here...."
                                                                 variant="outlined"
                                                                 fullWidth
                                                                 size="small"
@@ -307,7 +325,7 @@ const StaffaugementationComponent = () => {
                                                                 }} />
                                                         </Grid>
                                                     </Grid>
- 
+
                                                     <Grid item xs={12} sx={{ justifyContent: "center" }}>
                                                         <Button
                                                             type="submit"
@@ -323,27 +341,28 @@ const StaffaugementationComponent = () => {
                                             </Form>
                                         )}
                                     </Formik>
- 
- 
+
+
                                 </Grid>
                             </Grid>
+                            </>}
                         </Grid>
- 
-                        <Grid item py={3} sx={{display:{xs:"none",md:"flex"}}}>
+
+                        <Grid item py={3} sx={{ display: { xs: "none", md: "flex" } }}>
                             <Divider orientation='vertical' sx={{ backgroundColor: Theme.palette.background.border, width: "0.5px" }}></Divider>
                         </Grid>
- 
-                        <Grid item sx={{ textAlign: "start", alignItems: "center" ,marginTop:{xs:0,sm:6}}} md={6} p={{xs:2,sm:3}}>
+
+                        <Grid item sx={{ textAlign: "start", alignItems: "center", marginTop: { xs: 0, sm: 6 } }} md={6} p={{ xs: 2, sm: 3 }}>
                             <Grid item sm={10} md={12} lg={10}>
-                                <Typography variant='caption1' sx={{ fontSize: { xs:"18px",sm: "38px",md:"30px",lg:"35px" }, lineHeight: { xs:"38px",sm: "64px" }, }}>Scale Your Team with
-                               </Typography><br />
-                                <Typography variant='caption1' sx={{ fontSize: { xs:"18px",sm: "38px",md:"30px",lg:"35px" }, lineHeight: {xs:"38px", sm: "64px" }, }}> Flexible Staff Augmentation</Typography>
+                                <Typography variant='caption1' sx={{ fontSize: { xs: "18px", sm: "38px", md: "30px", lg: "35px" }, lineHeight: { xs: "38px", sm: "64px" }, }}>Scale Your Team with
+                                </Typography><br />
+                                <Typography variant='caption1' sx={{ fontSize: { xs: "18px", sm: "38px", md: "30px", lg: "35px" }, lineHeight: { xs: "38px", sm: "64px" }, }}> Flexible Staff Augmentation</Typography>
                             </Grid>
-                            <Grid item my={{xs:2,sm:3}}>
+                            <Grid item my={{ xs: 2, sm: 3 }}>
                                 <Typography variant='caption2' sx={{ color: "#6A6A6A" }}>Expand your in-house team with specialized developers through our staff augmentation services. Whether you need to ramp up quickly for a large project or fill skill gaps, we provide skilled professionals that integrate smoothly into your existing workforce. This is the ideal solution for businesses seeking to remain agile while managing growth.</Typography>
                             </Grid>
- 
-                            <Grid item xs={12} mt={{xs:0.5,sm:1}}>
+
+                            <Grid item xs={12} mt={{ xs: 0.5, sm: 1 }}>
                                 {content.map((item, index) => (
                                     <Grid item key={index} sx={{ display: "flex" }} gap={1} mb={1}>
                                         <Grid item sx={{ marginTop: 0.2 }}>
@@ -355,15 +374,15 @@ const StaffaugementationComponent = () => {
                                     </Grid>
                                 ))}
                             </Grid>
- 
- 
+
+
                         </Grid>
- 
+
                     </Grid>
                 </Grid>
             </Grid>
-    </>
-  )
+        </>
+    )
 }
- 
+
 export default StaffaugementationComponent

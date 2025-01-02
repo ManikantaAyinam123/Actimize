@@ -14,17 +14,18 @@ const ContactUsFormComponent = () => {
         FullName: Yup.string()
             .required('Name is required')
             .min(3, 'Name must be at least 3 characters long')
-            .matches(/^[A-Za-z]+$/, 'Name must contain only alphabets'),
+            .matches(/^[A-Za-z\s]+$/, 'Name must contain only alphabets'),
         subject: Yup.string()
             .required('subject Name is required')
             .min(3, 'Name must be at least 3 characters long')
-            .matches(/^[A-Za-z]+$/, 'Name must contain only alphabets'),
+            .matches(/^[A-Za-z\s]+$/, 'Name must contain only alphabets'),
         email: Yup.string()
             .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Email must be a valid email address')
             .required('Email is required'),
         PhoneNumber: Yup.string()
-            .required('Mobile number is required')
-            .matches(/^[0-9]{10}$/, 'Mobile number must be exactly 10 digits'),
+                   .required('Mobile number is required')
+                   .matches(/^[9876][0-9]{9}$/, 'Mobile number must be exactly 10 digits and start with 9, 8, 7, or 6'),
+       
         radioGroup: Yup.string().required("Please select an option."),
  
         requirements: Yup.string()
@@ -44,7 +45,7 @@ const ContactUsFormComponent = () => {
         const user_id = 'H9mKbRUHuFIU-z7Bh'
         const template_params = {
             from_name: values.FullName,
-            from_companyName: values.subject,
+            from_companyName: values.subject ,
             from_email: values.email,
             from_number: values.PhoneNumber,
             message: values.requirements,
@@ -63,14 +64,10 @@ const ContactUsFormComponent = () => {
             })
  
     };
-    const content = [
-        "Access to experienced developers for specific project requirements.", "Developers skilled in the latest technologies for custom solutions.", "Flexibility to hire on a short-term or long-term basis.",
-        "Developers who are a perfect fit for your business culture."
-    ]
+
  
  
-    const checkContentTwo = ["Developer", "Developer", "Developer", "Developer", "Developer", "Developer", "Developer"
-    ]
+
     const checkContent = [
         "Hire a Developer", "Outsource Project", "Partnership", "Others"]
  
@@ -78,14 +75,14 @@ const ContactUsFormComponent = () => {
     return (
         <>
             <Grid container justifyContent="center">
-                <Grid item xs={12} sx={{ justifyContent: {xs:"",md:"center"}, display: {xs:"block",md:"flex"},height:"auto" }}>
+                <Grid item xs={12} sx={{ justifyContent: {xs:"",md:"center"}, display: {xs:"block",md:"flex"}, }}>
                     <Grid item md={6} sx={{ borderRadius: 5, backgroundColor: "white", border: `1px solid ${Theme.palette.background.border}` ,height:"auto",margin:"auto"}} p={3}>
                         {!modalThree ? <>
                         <Grid item>
-                            <Typography variant='caption1' sx={{ fontSize: { xs: "20px" }, lineHeight: "40px" }}>Reach Out to Us</Typography>
+                            <Typography variant='caption1' sx={{ fontSize: { xs: "20px",sm:"30px" }, lineHeight: "40px" }}>Reach Out to Us</Typography>
                         </Grid>
                             <Grid item>
-                                <Typography variant='caption2' sx={{ color: Theme.palette.background.descp }}>We’d love to hear from you! </Typography> <Grid item><Typography variant='caption2' sx={{ color: Theme.palette.background.descp }}>
+                                <Typography variant='caption2' sx={{ color: Theme.palette.background.descp ,fontSize:"20px",fontWeight:"medium"}}>We’d love to hear from you! </Typography> <Grid item><Typography variant='caption2' sx={{ color: Theme.palette.background.descp }}>
                                     Fill out the form, and we’ll get back to you shortly!</Typography></Grid>
                             </Grid>
                             <Grid container justifyContent="center">
@@ -105,7 +102,7 @@ const ContactUsFormComponent = () => {
                                         {({ errors, touched, isSubmitting }) => (
                                             <Form sx={{height:"auto"}}>
                                                 <Grid container sx={{ justifyContent: "center" }}>
-                                                    <Grid item sx={{ display: { xs: "block", sm: "flex" } }} xs={12} gap={2}>
+                                                    <Grid item sx={{ display: { xs: "block", sm: "flex" } }} xs={12} gap={2} mb={2}>
                                                         <Grid item sm={6}>
                                                             <Grid item><Typography variant='caption2' sx={{ color: "#363636" }}>Name</Typography></Grid>
                                                             <Field
@@ -160,7 +157,7 @@ const ContactUsFormComponent = () => {
                                                             />
                                                         </Grid>
                                                     </Grid>
-                                                    <Grid item sx={{ display: { xs: "block", sm: "flex" } }} xs={12} gap={2}>
+                                                    <Grid item sx={{ display: { xs: "block", sm: "flex" } }} xs={12} gap={2} mb={2}>
                                                         <Grid item sm={6}>
                                                             <Grid item><Typography variant='caption2' sx={{ color: "#363636" }}>Phone Number</Typography></Grid>
                                                             <Field

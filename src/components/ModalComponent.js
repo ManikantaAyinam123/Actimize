@@ -5,8 +5,8 @@ const ModalComponent = () => {
   return (
     <>
       <Grid container justifyContent="center">
-        <Grid item xs={12} sx={{ justifyContent: "center",}}>
-          <Grid item xs={8} sx={{ textAlign:"center",justifyContent: "center",alignItems:"center" ,margin:"auto",marginY:"auto",}}>
+        <Grid item xs={12} sx={{ justifyContent: "center",alignItems:"center",margin:"auto",}}>
+          <Grid item smn={8} sx={{ textAlign:"center",justifyContent: "center",alignItems:"center" ,margin:"auto",marginY:"auto",}}>
             <Grid item sx={{ backgroundColor: "white", borderRadius: 3,display:"block" }}>
             
               <Box

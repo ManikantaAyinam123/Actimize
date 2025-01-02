@@ -20,23 +20,37 @@ const HireDeveloperThirdComponent = () => {
     return (
         <>
             <Grid container justifyContent="center">
-                <Grid item xs={12} sx={{ justifyContent: "center", alignItems: "center", marginX: "auto" ,textAlign:"center"}} mt={7}>
+                <Grid item xs={12} sx={{ justifyContent: "center", alignItems: "center", marginX: "auto" ,textAlign:"center"}} mt={15}>
                     <Grid item >
                         <Typography variant='caption1' sx={{ fontSize: { xs: "20px", sm: "40px", md: "35px", lg: "40px" }, lineHeight: { xs: "38px", sm: "64px" }, }}>Why Choose </Typography>
                         <Typography variant='caption1' sx={{ color: Theme.palette.background.default, fontSize: { xs: "20px", sm: "40px", md: "35px", lg: "40px" }, lineHeight: { xs: "38px", sm: "64px" }, }}> Actimize Over Traditional Recruitment?</Typography>
                     </Grid>
-                    <Grid item mb={5}>
+                    <Grid item mb={5} mt={2}>
                         <Typography variant='caption2' sx={{ color: Theme.palette.background.descp, }}>Unlock the Power of Scalable Talent with Actimize’s Developer Solutions
                         </Typography>
                     </Grid>
 
-                    <Grid item xs={12} sx={{ display: {xs:"block",sm:"flex"} }} gap={{sm:1,md:5,lg:13}}>
-                        <Grid item sm={3}lg={3}  mt={{xs:0,sm:12.5,md:9.5,lg:11,xl:12}}  mb={{xs:2,sm:0}}>
+                    <Grid item xs={12} sx={{ display: {xs:"block",sm:"flex"} }} 
+                    gap={{sm:1,md:5,lg:13}}
+                    >
+                        <Grid item sm={3}lg={3} 
+                        //  mt={{xs:0,sm:12.5,md:9.5,lg:0,xl:0}} 
+                       sx={{ minHeight: {xm:700, md: 720 },
+                        display: "flex",
+                        flexDirection: "column",
+                       
+                        justifyContent: "space-between", 
+    }}
+                        mt={7}
+                          mb={{xs:2,sm:0}}
+                         >
                             <Grid item xs={12}>
                                 <Grid item sx={{ border: `3px solid ${Theme.palette.background.border}`, borderRadius: 4 }} px={{xs:1,md:2}}>
                                     {content.map((item, index) => (
-                                        <Grid item key={index} sx={{ borderBottom: index === content.length - 1 ? "none" : `2px dashed ${Theme.palette.background.border}`, textAlign: "center", marginX: "auto", paddingY: 3.73 }} >
-                                            <Typography variant='caption1' sx={{ textAlign: "center", fontSize: { xs: "13px",sm:"9px",md:"13px",lg:"13px",xl:"13px"}, fontWeight: "bold" }}>{item}</Typography>
+                                        <Grid item key={index} sx={{ borderBottom: index === content.length - 1 ? "none" : `2px dashed ${Theme.palette.background.border}`, textAlign: "center", marginX: "auto", alignItems:"center",
+                                        paddingY:{xs: 4.2,md:4,lg:4.2} 
+                                      }} >
+                                            <Typography variant='caption1' sx={{ textAlign: "center", fontSize: { xs: "13px",sm:"9px",md:"10px",lg:"13px",xl:"13px"}, fontWeight: 400,color:"#363636" }}>{item}</Typography>
                                         </Grid>
                                     ))}
                                 </Grid>
@@ -47,11 +61,10 @@ const HireDeveloperThirdComponent = () => {
                             sm={4.5}
                             mb={{xs:2,sm:0}}
                             sx={{
-                                minHeight: { xs: 760 },
-                                // border: "2px solid red",
+                                minHeight: { xs: 760 }, 
                                 display: "flex",
                                 flexDirection: "column",
-                                justifyContent: "space-between", // Ensures equal spacing for the entire content
+                                justifyContent: "space-between",  
                             }}
                         >
                             <Grid
@@ -61,9 +74,11 @@ const HireDeveloperThirdComponent = () => {
                                     border: "3px solid #1FBC59",
                                     borderRadius: 5,
                                     backgroundColor: "#1FBC59",
-                                    boxShadow: "0px 8px 15px rgba(31, 188, 89, 0.4)", // Drop shadow
+                                    boxShadow: "0px 16px 20px rgba(31, 188, 89, 0.7)",
+                                    
+                                    
                                 }}
-                                pt={2}
+                                // pt={2}
                                 p={0.5}
                             >
                                 <Grid
@@ -73,6 +88,7 @@ const HireDeveloperThirdComponent = () => {
                                         display: "flex",
                                         justifyContent: "center",
                                         alignItems: "center",
+                                        paddingY:1  
                                     }}
                                 >
                                     <Typography
@@ -89,7 +105,8 @@ const HireDeveloperThirdComponent = () => {
                                 <Grid
                                     item
                                     xs={12}
-                                    p={1}
+                                    px={2}
+                                    py={3}
                                     sx={{
                                         backgroundColor: "white",
                                         borderRadius: 3,
@@ -107,15 +124,17 @@ const HireDeveloperThirdComponent = () => {
                                             item
                                             sx={{
                                                 display: "flex",
-                                                // alignItems: "center",
-                                                gap: 1,
+                                                alignItems: "center",
+                                                gap: 2,
+                                                // minHeight:"80px",
+                                             
                                             }}
                                         >
                                             <Grid item>
-                                                <Box component="img" src="/assets/images/solar_like-bold.png" />
+                                                <Box component="img" src="/assets/images/solar_like-bold.svg" />
                                             </Grid>
                                             <Grid item>
-                                                <Typography variant="caption3" sx={{fontWeight:"normal",textAlign:"start",fontSize:{xs:"13px",sm:"10px",md:"13px",xl:"15px"}}}>{item}</Typography>
+                                                <Typography variant="caption3" sx={{fontWeight:"normal",textAlign:"start",fontSize:{xs:"13px",sm:"10px",md:"14px",xl:"15px"}}}>{item}</Typography>
                                             </Grid>
                                         </Grid>
                                     ))}
@@ -123,8 +142,87 @@ const HireDeveloperThirdComponent = () => {
                             </Grid>
                         </Grid>
 
-
                         <Grid
+                            item
+                            sm={4.5}
+                            mb={{xs:2,sm:0}}
+                            sx={{
+                                minHeight: { xs: 760 },
+                                // border: "2px solid red",
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "space-between", // Ensures equal spacing for the entire content
+                            }}
+                        >
+                            <Grid
+                                item
+                                xs={12}
+                                sx={{
+                                    border: "3px solid #fef3e2",
+                                    borderRadius: 5,
+                                    backgroundColor: "#fef3e2",
+                                }}
+                                // pt={2}
+                                p={0.5}
+                            >
+                                <Grid
+                                    item
+                                    sx={{
+                                        margin: "auto",
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        alignItems: "center",
+                                        paddingY:1.5  
+                                    }}
+                                >
+                                    <Typography
+                                        variant="caption1"
+                                        sx={{
+                                            fontSize: { xs: "20px", textAlign: "center",color:"#363636" },
+                                        }}
+                                    >
+                                        Traditional Recruitment
+                                    </Typography>
+                                </Grid>
+
+                                <Grid
+                                    item
+                                    xs={12}
+                                    px={2}
+                                    py={3}
+                                    sx={{
+                                        backgroundColor: "white",
+                                        borderRadius: 3,
+                                        height: "auto",
+                                        minHeight: { xs: 720 },
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        justifyContent: "space-between", 
+                                        textAlign:"start"
+                                    }}
+                                >
+                                    {content3.map((item, index) => (
+                                        <Grid
+                                            key={index}
+                                            item
+                                            sx={{
+                                                display: "flex",
+                                                alignItems: "center",
+                                                gap: 2,
+                                            }}
+                                        >
+                                            <Grid item>
+                                                <Box component="img" src="/assets/images/solar_dislike-bold.svg" />
+                                            </Grid>
+                                            <Grid item>
+                                                <Typography variant="caption3" sx={{fontWeight:"normal",textAlign:"start",fontSize:{xs:"13px",sm:"10px",md:"14px",xl:"15px"}}}>{item}</Typography>
+                                            </Grid>
+                                        </Grid>
+                                    ))}
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        {/* <Grid
                             item
                             sm={4.5}
                             mb={{xs:1,sm:0}}
@@ -155,13 +253,15 @@ const HireDeveloperThirdComponent = () => {
                                         display: "flex",
                                         justifyContent: "center",
                                         alignItems: "center",
-                                    }} py={.5}
+                                    }}
+                                    //  py={.5}
                                 >
                                     <Typography
                                         variant="caption1"
                                         sx={{
                                             color: "black",
                                             fontSize: { xs: "20px",  textAlign: "center" },
+                                            paddingY:1  
                                         }}
                                     >
                                         Traditional Recruitment
@@ -193,7 +293,7 @@ const HireDeveloperThirdComponent = () => {
                                     ))}
                                 </Grid>
                             </Grid>
-                        </Grid>
+                        </Grid> */}
 
 
                     </Grid>
