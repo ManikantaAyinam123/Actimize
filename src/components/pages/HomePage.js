@@ -12,12 +12,15 @@ import HomepageLastComponent from '../HomepageLastComponent'
 import Footer from '../Footer'
 import Navbar from '../Navbar'
 import HomeCardsComponent5 from '../HomeCardsComponent5'
+import NavbarComponent from '../NavabrComponenttt'
+import TopComponent from '../TopComponent'
 
 const HomePage = () => {
   return (
     <>
    
-        <Navbar/>
+        {/* <Navbar/> */}
+        <NavbarComponent/>
     <Homecarousel1/>
     <HomeCardsComponent/>
     <HomeCardsComponent5/>
@@ -26,7 +29,7 @@ const HomePage = () => {
     <LogosSliderComponent/>
     <HomepageLastComponent/>
 
-   
+   <TopComponent/>
   
      <Footer/>
      </>

@@ -19,7 +19,7 @@ const HireDeveloperFouthComponentMobile = ({ content1, content2, content3, conte
 
   return (
     <>
-      <Grid container justifyContent="center" spacing={2}> 
+      <Grid container justifyContent="center" spacing={2} mb={5}>  
         {allContent.map((item, index) => (
           <Grid item xs={6} sx={{ display: { xs: "flex", sm: "none" } }} key={index}>
             <Grid
@@ -34,6 +34,7 @@ const HireDeveloperFouthComponentMobile = ({ content1, content2, content3, conte
                 minHeight: "100px",
                 overflow: "hidden",   
                 wordWrap: "break-word",  
+                gap:2
               }}
               mb={1}
               p={1.2}

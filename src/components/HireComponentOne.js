@@ -13,7 +13,7 @@ const HireComponentOne = () => {
         justifyContent: 'center',
       }}
     >
-    <Grid container justifyContent="center"  sx={{width:'90%'}} >
+    <Grid container justifyContent="center"  sx={{width:'90%'}} mb={5}>
     <Grid container sx={{ display: "block", alignItems: "center", textAlign: "center", marginX: "auto", }} mt={{ xs: 12, md: 20 }}>
  
      <Box
