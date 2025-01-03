@@ -42,7 +42,7 @@ export default function HomeCardsComponent() {
         sx={{
           width: '90%',
           textAlign: 'center',
-          mt: { xs: '70px', md: '160px' },
+          mt: { xs: '70px', md: '200px' },
         }}
       >
         {/* Decorative Background Images */}
@@ -78,7 +78,7 @@ export default function HomeCardsComponent() {
           sx={{
             fontFamily: "'ADLaM Display', serif",
             fontWeight: '400',
-            fontSize: { xs: '15px', sm: '15px', md: '40px' },
+            fontSize: { xs: '28px', sm: '28px', md: '40px' },
             lineHeight: { xs: '30px', md: '64px' },
             color: '#363636',
           }}
@@ -90,9 +90,10 @@ export default function HomeCardsComponent() {
             mt: { xs: '5px', sm: '4px' },
             fontFamily: "'Ruwudu'",
             fontWeight: '400',
-            fontSize: { xs: '15px', sm: '15px', md: '18px' },
-            lineHeight: { xs: '20px', md: '30px' },
+            fontSize: { xs: '16px', sm: '16px', md: '18px' },
+            lineHeight: { xs: '26px', md: '30px' },
             color: '#363636',
+            mt:{xs:'16px',sm:'16px'}
           }}
         >
           From apps to AI, we deliver innovative and scalable development solutions.
@@ -121,7 +122,7 @@ export default function HomeCardsComponent() {
                     width: '60px',
                     height: '60px',
                     margin: '0 auto',
-                    mb: 2,
+                    mb:{xs:'16px',md:'32px'},
                   }}
                 />
 
@@ -141,11 +142,11 @@ export default function HomeCardsComponent() {
                 {/* Description */}
                 <Typography
                   sx={{
-                    mt: { xs: '10px', sm: '10px' },
+                    mt: { xs: '10px',md:'16px' },
                     fontFamily: "'Ruwudu'",
                     fontWeight: '400',
                     fontSize: { xs: '15px', sm: '15px', md: '16px' },
-                    lineHeight: { xs: '20px', md: '20px' },
+                    lineHeight: { xs: '20px', md: '28px' },
                     color: '#363636',
                   }}
                 >
