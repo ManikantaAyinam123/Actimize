@@ -1,4 +1,4 @@
-import { Box, Checkbox, Divider, FormControl, FormControlLabel, FormLabel, Grid, Typography, RadioGroup, Radio } from '@mui/material'
+import { Box, Checkbox, Divider, FormControl, FormControlLabel, FormLabel, Grid, Typography, RadioGroup, Radio,InputAdornment } from '@mui/material'
 import React, { useState } from 'react'
 import Theme from '../Theme'
 import { Formik, Form, Field } from 'formik';
@@ -7,9 +7,22 @@ import { TextField, Button, } from '@mui/material';
 import emailjs from 'emailjs-com'
 import { toast } from 'react-toastify';
 import ModalComponent from './ModalComponent';
+import Select from 'react-select';
  
 const ContactUsFormComponent = () => {
     const [modalThree, setModalThree] = useState(false)
+      const [selectedCountry, setSelectedCountry] = useState({
+        code: "IN",
+        phone: "+91",
+      });
+    
+      const countries = [
+        { code: "US", name: "United States", phone: "+1" },
+        { code: "CA", name: "Canada", phone: "+1" },
+        { code: "GB", name: "United Kingdom", phone: "+44" },
+        { code: "IN", name: "India", phone: "+91" },
+    
+      ];
     const validationSchema = Yup.object({
         FullName: Yup.string()
             .required('Name is required')
@@ -37,19 +50,25 @@ const ContactUsFormComponent = () => {
  
  
     const onSubmit = (values, actions) => {
-        console.log("Form Values:", values);
+        
         actions.resetForm();
+        const fullPhoneNumber = `${selectedCountry.phone}${values.PhoneNumber}`;
+        const dataToSubmit = {
+            ...values,
+            PhoneNumber: fullPhoneNumber,
+          };
+          console.log("Form Values:", dataToSubmit);
  
         const service_id = 'service_nnu1lu4'
         const template_id = 'template_p2n7w53'
         const user_id = 'H9mKbRUHuFIU-z7Bh'
         const template_params = {
-            from_name: values.FullName,
-            from_companyName: values.subject ,
-            from_email: values.email,
-            from_number: values.PhoneNumber,
-            message: values.requirements,
-            from_Expert: values.radioGroup,
+            from_name: dataToSubmit.FullName,
+            from_companyName: dataToSubmit.subject ,
+            from_email: dataToSubmit.email,
+            from_number: dataToSubmit.PhoneNumber,
+            message: dataToSubmit.requirements,
+            from_Expert: dataToSubmit.radioGroup,
             to_name: "Actimize"
         }
         emailjs.send(service_id, template_id, template_params, user_id)
@@ -91,8 +110,8 @@ const ContactUsFormComponent = () => {
                         <Grid item>
                             <Typography variant='caption1' sx={{ fontSize: { xs: "20px",sm:"30px" }, lineHeight: "40px" }}>Reach Out to Us</Typography>
                         </Grid>
-                            <Grid item>
-                                <Typography variant='caption2' sx={{ color: Theme.palette.background.descp ,fontSize:"20px",fontWeight:"medium"}}>We’d love to hear from you! </Typography> <Grid item><Typography variant='caption2' sx={{ color: Theme.palette.background.descp }}>
+                            <Grid item mt={2}>
+                                <Typography variant='caption2' sx={{ color: Theme.palette.background.descp ,fontSize:"20px",fontWeight:"medium"}}>We’d love to hear from you! </Typography> <Grid item mb={3}><Typography variant='caption2' sx={{ color: Theme.palette.background.descp }}>
                                     Fill out the form, and we’ll get back to you shortly!</Typography></Grid>
                             </Grid>
                             <Grid container justifyContent="center">
@@ -118,7 +137,7 @@ const ContactUsFormComponent = () => {
                                                             <Field
                                                                 name="FullName"
                                                                 as={TextField}
-                                                                label="Your Name"
+                                                                placeholder="Your Name"
                                                                 variant="outlined"
                                                                 fullWidth
                                                                 size="small"
@@ -145,7 +164,7 @@ const ContactUsFormComponent = () => {
                                                                 name="email"
                                                                 as={TextField}
                                                                 // type="email"
-                                                                label="Your  email address"
+                                                                placeholder="Your  email address"
                                                                 variant="outlined"
                                                                 fullWidth
                                                                 size="small"
@@ -171,35 +190,128 @@ const ContactUsFormComponent = () => {
                                                         <Grid item sm={6}>
                                                             <Grid item><Typography variant='caption2' sx={{ color: "#363636" }}>Phone Number</Typography></Grid>
                                                             <Field
-                                                                name="PhoneNumber"
-                                                                as={TextField}
-                                                                label="Your Phone Number"
-                                                                variant="outlined"
-                                                                fullWidth
-                                                                size="small"
-                                                                sx={{
-                                                                    "& .MuiOutlinedInput-root": {
-                                                                        "& fieldset": {
-                                                                            borderColor: "#FFE4BB",
-                                                                        },
-                                                                        "&:hover fieldset": {
-                                                                            borderColor: "darkorange",
-                                                                        },
-                                                                        "&.Mui-focused fieldset": {
-                                                                            borderColor: "#FFE4BB",
-                                                                        },
-                                                                    },
-                                                                }}
-                                                                error={touched.PhoneNumber && Boolean(errors.PhoneNumber)}
-                                                                helperText={touched.PhoneNumber && errors.PhoneNumber}
-                                                            />
+                                      name="PhoneNumber"
+                                      as={TextField}
+                                      placeholder="Your Phone Number"
+                                      variant="outlined"
+                                      fullWidth
+                                      size="small"
+                                      sx={{
+                                        "& .MuiOutlinedInput-root": {
+                                          "& fieldset": { borderColor: "#FFE4BB" },
+                                          "&:hover fieldset": { borderColor: "darkorange" },
+                                          "&.Mui-focused fieldset": { borderColor: "#FFE4BB" },
+                                          height: "40px",
+                                          padding: "0 10px",
+                                        },
+                                        "& .MuiInputBase-input": { height: "1.6em", padding: "0px 0px", },
+                                      }}
+                                      InputProps={{
+                                        startAdornment: (
+                                          <InputAdornment position="start">
+                                            <Select
+                                              options={countries.map((country) => ({
+                                                label: (
+                                                  <div style={{ display: "flex", alignItems: "center" }}>
+                                                    <img
+                                                      src={`https://flagcdn.com/w40/${country.code.toLowerCase()}.png`}
+                                                      alt={country.code}
+                                                      style={{ width: "20px", height: "15px", marginRight: "5px" }}
+                                                    />
+                                                    {country.phone}
+                                                  </div>
+                                                ),
+                                                value: country,
+                                              }))}
+                                              value={{
+                                                label: (
+                                                  <div style={{ display: "flex", alignItems: "center" }}>
+                                                    <img
+                                                      src={`https://flagcdn.com/w40/${selectedCountry.code.toLowerCase()}.png`}
+                                                      alt={selectedCountry.code}
+                                                      style={{ width: "20px", height: "15px", marginRight: "5px" }}
+                                                    />
+                                                    {selectedCountry.phone}
+                                                  </div>
+                                                ),
+                                                value: selectedCountry,
+                                              }}
+                                              onChange={(option) => setSelectedCountry(option.value)}
+                                              styles={{
+                                                control: (provided) => ({
+                                                  ...provided,
+                                                  border: "none",
+                                                  boxShadow: "none",
+                                                  // padding: 0,
+                                                  // paddingLeft: 0,
+                                                  // paddingRight: 0,
+                                                  // minHeight: "auto",
+                                                  width: "90px",
+                                                }),
+                                                container: (provided) => ({
+                                                  ...provided,
+                                                  width: "100px", 
+                                                  // padding: 0,
+                                                  // margin: 0
+                                                }),
+                                                singleValue: (provided) => ({
+                                                  ...provided,
+                                                  color:Theme.palette.background.descp
+                                                  // padding: 0,
+                                                  // overflow: "visible",
+                                                }),
+                                                menuPortal: (provided) => ({
+                                                  ...provided,
+                                                  zIndex: 9999,
+                                                }),
+                                                menu: (provided) => ({
+                                                  ...provided,
+                                                  zIndex: 9999,
+                                                }),
+                                                dropdownIndicator: (provided) => ({
+                                                  ...provided,
+                                                  padding: 1,
+                                                  borderRight:"1px solid lightgray",
+                                                }),
+                                                indicatorSeparator: (provided) => ({
+                                                  ...provided,
+                                                  display: 'none',
+                                                }),
+                                                input: (provided) => ({
+                                                  ...provided,
+                                                  margin: 0,
+                                                  padding: "0 5px",
+                                                  maxWidth: "70px",
+                                                  color:Theme.palette.background.desc
+                                                  // textOverflow: "ellipsis",
+                                                  // overflow: "hidden",
+                                                }),
+                                                valueContainer: (provided) => ({
+                                                  ...provided,
+                                                  padding: 0,
+                                                  margin: 0,
+                                                }),
+                                              }}
+                                              menuPortalTarget={document.body}
+                                            />
+
+
+
+
+
+                                          </InputAdornment>
+                                        ),
+                                      }}
+                                      error={touched.PhoneNumber && Boolean(errors.PhoneNumber)}
+                                      helperText={touched.PhoneNumber && errors.PhoneNumber}
+                                    />
                                                         </Grid>
                                                         <Grid item sm={6}>
                                                             <Grid item><Typography variant='caption2' sx={{ color: "#363636" }}> Subject</Typography></Grid>
                                                             <Field
                                                                 name="subject"
                                                                 as={TextField}
-                                                                label="Enter the subject"
+                                                                placeholder="Enter the subject"
                                                                 variant="outlined"
                                                                 fullWidth
                                                                 size="small"
@@ -229,7 +341,7 @@ const ContactUsFormComponent = () => {
                                                                     id="expert-radio-group-label"
                                                                     sx={{
                                                                         display: 'block',
-                                                                        marginY: 1,
+                                                                        margint: 1,
                                                                         color: '#363636',
                                                                         fontFamily: 'Inter',
                                                                     }}
@@ -288,7 +400,7 @@ const ContactUsFormComponent = () => {
                                                         <Grid item xs={12}>
                                                             <Field rows={5} name="requirements"
                                                                 as={TextField}
-                                                                label="Write your Message here..."
+                                                                placeholder="Write your Message here..."
                                                                 variant="outlined"
                                                                 fullWidth
                                                                 size="small"

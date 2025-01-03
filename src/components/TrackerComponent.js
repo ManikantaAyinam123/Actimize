@@ -28,7 +28,7 @@ const TrackerComponent = () => {
     
     }}
   >
-            <Grid container justifyContent="center" sx={{mt:'120px',width:'90%'}}>
+            <Grid container justifyContent="center" sx={{mt:'120px',width:'90%'}} mb={15}>
                 <Grid item xs={12} sx={{ justifyContent: "center", }}>
                     <Grid item sx={{ justifyContent: "center", margin: "auto", textAlign: "center" }}>
                         <Grid item>

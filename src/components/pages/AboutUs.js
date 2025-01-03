@@ -7,19 +7,22 @@ import HomeCardsComponent3 from '../HomeCardsComponent3'
 import AboutUs2 from '../AboutUs2'
 import AboutUs3 from '../AboutUs3'
 import Navbar from '../Navbar'
+import NavbarComponent from '../NavabrComponenttt'
+import TopComponent from '../TopComponent'
 
 const AboutUs = () => {
   return (
     <>
    
-    <Navbar />
+    {/* <Navbar /> */}
+    <NavbarComponent/>
     <AboutUs1/>
     <HomeCardsComponent3/>
    
     <AboutUs2/>
     <AboutUs3/>
  
- 
+    <TopComponent/>
  <Footer/>
  
    </>

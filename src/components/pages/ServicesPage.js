@@ -7,6 +7,8 @@ import Services2 from '../Services2'
 import Services3 from '../Services3'
 import HomeCardsComponent from '../HomeCardsComponent'
 import HomeCardsComponent2 from '../HomeCardsComponent2'
+import NavbarComponent from '../NavabrComponenttt'
+import TopComponent from '../TopComponent'
 
 
 const ServicesPage = () => {
@@ -14,12 +16,13 @@ const ServicesPage = () => {
   
           <>
        
-              <Navbar/>
+              {/* <Navbar/> */}
+              <NavbarComponent/>
               <Services1/>
               <Services2/>
               <HomeCardsComponent2/>
               <Services3/>
-        
+              <TopComponent/>
       
          
        

@@ -30,7 +30,7 @@ export default function Homecarousel1() {
   ];
 
   return (
-    <Box sx={{ backgroundColor: '#FFFFFF', mt: { xs: '70px', md: '160px' }, width: '100%' }}>
+    <Box sx={{ backgroundColor: '#FFFFFF', mt: { xs: '70px', md: '160px' }, width: '100%' ,}}>
       <Box
         sx={{
           width: '90%',
