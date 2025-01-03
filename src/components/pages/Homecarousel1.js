@@ -30,7 +30,7 @@ export default function Homecarousel1() {
   ];
 
   return (
-    <Box sx={{ backgroundColor: '#FFFFFF', mt: { xs: '70px', md: '160px' }, width: '100%' ,}}>
+    <Box sx={{ backgroundColor: '#FDFCF9', mt: { xs: '100px', md: '80px' }, width: '100%' }}>
       <Box
         sx={{
           width: '90%',
@@ -39,7 +39,7 @@ export default function Homecarousel1() {
       >
         <Swiper
           autoplay={{
-            delay: 2500,
+            delay: 5000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -48,6 +48,7 @@ export default function Homecarousel1() {
           modules={[Autoplay, Pagination, Navigation]}
           className="custom-swiper"
           style={{
+            
             '--swiper-navigation-color': '#FF5722',
             '--swiper-pagination-color': '#FF5722',
             '--swiper-pagination-bullet-inactive-color': '#ccc',
@@ -61,7 +62,7 @@ export default function Homecarousel1() {
                   display: 'flex',
                   flexDirection: { xs: 'column', md: 'row' },
                   alignItems: 'center',
-                  justifyContent: 'space-between',
+                  
                   gap: '20px',
                 }}
               >
@@ -72,10 +73,10 @@ export default function Homecarousel1() {
                     textAlign: { xs: 'center', md: 'left' },
                   }}
                 >
-                  <Typography sx={{ ml: { sm: '40px', md: '0px' }, color: '#363636', fontSize: { xs: '15px', sm: '30px', md: '40px' }, fontWeight: '400', lineHeight: { xs: '20px', sm: '40px', md: '64px' }, maxWidth: '500px', fontFamily: '"ADLaM Display", serif' }}>
+                  <Typography sx={{ ml: { sm: '40px', md: '0px' }, color: '#363636', fontSize: { xs: '28px', sm: '30px', md: '40px' }, fontWeight: '400', lineHeight: { xs: '36px', sm: '40px', md: '64px' }, maxWidth: '500px', fontFamily: '"ADLaM Display", serif' }}>
                     {slide.title}
                   </Typography>
-                  <Typography sx={{ color: '#6A6A6A', mt: '20px', fontSize: { xs: '12px', md: '16px' }, fontWeight: '400', lineHeight: { xs: '20px', md: '30px' }, maxWidth: '600px', fontFamily: '"Ruwudu", serif' }}>
+                  <Typography sx={{ mt:{xs:'20px'},color: '#6A6A6A', fontSize: { xs: '16px', md: '16px' }, fontWeight: '400', lineHeight: { xs: '26px', md: '30px' }, maxWidth: '600px', fontFamily: '"Ruwudu", serif' }}>
                     {slide.description}
                   </Typography>
                   <Button
@@ -83,12 +84,12 @@ export default function Homecarousel1() {
                       backgroundColor: theme.palette.background.default,
                       borderRadius: '16px',
                       textTransform: 'none',
-                      padding: { xs: '2px 20px', md: '5px 40px' },
+                      padding: { xs: '8px 50px', md: '5px 40px' },
                       fontFamily: '"ADLaM Display", serif',
                       fontSize: '16px',
                       fontWeight: '400',
                       color: '#FFFFFF',
-                      mt: { xs: '8px', sm: '10px' },
+                      mt: { xs: '20px', sm: '20px' },
                     }}
                   >
                     {slide.buttonText}
@@ -102,6 +103,7 @@ export default function Homecarousel1() {
                     display: 'flex',
                     justifyContent: { xs: 'center', md: 'flex-end' },
                     alignItems: 'center',
+                    mt:{xs:'20px',sm:'20px'}
                   }}
                 >
                   <img

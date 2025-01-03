@@ -62,21 +62,21 @@ export default function HomeCardsComponent5() {
         
         }}
       >
-        <Box sx={{ textAlign: "center", mt: { xs: '70px', md: '160px' },width:'90%' }}>
+        <Box sx={{ textAlign: "center", mt: { xs: '70px', md: '240px' },width:'90%' }}>
             {/* Title */}
-            <Typography sx={{ fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px', md: '40px' }, lineHeight: { xs: '30px', md: '64px' }, color: '#363636', }}>
+            <Typography sx={{ fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '28px', sm: '30px', md: '40px' }, lineHeight: { xs: '36px', md: '64px' }, color: '#363636', }}>
                 Redefining Web & Mobile{" "}
                 <span style={{ color: theme.palette.background.default, fontFamily: "'ADLaM Display',serif", }}>
                     Development with AI
                 </span>
             </Typography>
-            <Typography sx={{ mt: { xs: '5px', sm: '4px' }, fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px', md: '18px' }, lineHeight: { xs: '20px', md: '30px' }, color: '#363636', }}>
+            <Typography sx={{ mt: { xs: '16px', sm: '24px' }, fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px', md: '18px' }, lineHeight: { xs: '20px', md: '30px' }, color: '#363636', }}>
                 AI plays a pivotal role in modern development, driving innovation and efficiency at every stage.
             </Typography>
 
             {/* Features */}
-            <Grid contaier justifyContent="center" sx={{ mt: '50px', mb: '20px' }}>
-                <Grid item display={"flex"} flexWrap={'wrap'} justifyContent={"space-evenly"} sx={{ mt: '20px', mb: '20px' }}>
+            <Grid contaier justifyContent="center" sx={{ mt:{xs:'80px',sm:'120px'}, mb: '20px' }}>
+                <Grid item display={"flex"} flexWrap={'wrap'} justifyContent={"space-around"} sx={{ mt: '20px', mb: '20px' }}>
                     <Box
                         sx={{
                             position: "relative",
@@ -100,15 +100,16 @@ export default function HomeCardsComponent5() {
                                 borderRadius: "50%",
                                 objectFit: "cover",
 
-                                padding: '5px'
+                                padding: '5px',
+                              
                             }}
                         />
                         {/* Title */}
-                        <Typography sx={{  fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
+                        <Typography sx={{ mt:{xs:'16px'}, fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
                             {features[0].title}
                         </Typography>
                         {/* Description */}
-                        <Typography sx={{  mx: "auto", maxWidth:'250px', mt: { xs: '5px', sm: '4px' }, fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
+                        <Typography sx={{ mt:{xs:'12px'}, mx: "auto", maxWidth:'250px', fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
                             {features[0].description}
                         </Typography>
                     </Box>
@@ -137,22 +138,29 @@ export default function HomeCardsComponent5() {
                                 borderRadius: "50%",
                                 objectFit: "cover",
 
-                                padding: '5px'
+                                padding: '5px',
+                                mt:{xs:'10px',sm:'0px'}
                             }}
                         />
                         {/* Title */}
-                        <Typography sx={{ fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
+                        <Typography sx={{mt:{xs:'16px'}, fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
                             {features[1].title}
                         </Typography>
                         {/* Description */}
-                        <Typography sx={{  mx: "auto",maxWidth:'280px', mt: { xs: '5px', sm: '4px' }, fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
+                        <Typography sx={{mt:{xs:'12px'},  mx: "auto",maxWidth:'280px', mt: { xs: '5px', sm: '4px' }, fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
                             {features[1].description}
                         </Typography>
                     </Box>
                 </Grid>
-                <Grid container xs={12} sx={{ mt: '20px' }}>
 
-                    <Grid item xs={12}  md={4} lg={4}  >
+
+
+                {/* middle component */}
+                <Grid container xs={12} sx={{ mt: '20px' ,  display:'flex',
+                                alignItems:'center',
+                                justifyContent:'center'}}>
+
+                    <Grid item xs={12} sm={12} md={4} lg={3}  sx={{ display:'flex',flexDirection:{xs:'column',sm:'row',md:'column',justifyContent:'space-evenly'}}} >
                         <Box
                             sx={{
                                 position: "relative",
@@ -181,15 +189,16 @@ export default function HomeCardsComponent5() {
                                     height: "48px",
                                     borderRadius: "50%",
                                     objectFit: "cover",
-                                    padding: '5px'
+                                    padding: '5px',
+                                    mt:{sm:'20px',md:'0px'}
                                 }}
                             />
                             {/* Title */}
-                            <Typography sx={{ ml:'8px', fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
+                            <Typography sx={{mt:{xs:'16px',sm:'25px',md:'16px'}, ml:'8px', fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
                                 {features[2].title}
                             </Typography>
                             {/* Description */}
-                            <Typography sx={{  mx: "auto",maxWidth:'250px', mt: { xs: '5px', sm: '4px' }, fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
+                            <Typography sx={{mt:{xs:'12px'},  mx: "auto",maxWidth:'250px', fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
                                 {features[2].description}
                             </Typography>
                         </Box>
@@ -223,27 +232,35 @@ export default function HomeCardsComponent5() {
                                     height: "48px",
                                     borderRadius: "50%",
                                     objectFit: "cover",
+                                     
+                                    padding: '5px',
+                                       mt:{xs:'10px',md:'72px'}
 
-                                    padding: '5px'
+                                 
                                 }}
                             />
                             {/* Title */}
-                            <Typography sx={{ ml:'8px', fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
+                            <Typography sx={{ mt:{xs:'16px',md:'72px'}, ml:'8px', fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
                                 {features[3].title}
                             </Typography>
                             {/* Description */}
-                            <Typography sx={{  mx: "auto",maxWidth:'280px', mt: { xs: '5px', sm: '4px' }, fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
+                            <Typography sx={{ mt:{xs:'12px'}, mx: "auto",maxWidth:'280px',  fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
                                 {features[3].description}
                             </Typography>
                         </Box>
 
 
                     </Grid>
-                    <Grid item xs={12} md={4} lg={4}>
+
+                    {/* middle image */}
+                    <Grid item xs={12} md={4} lg={5}>
                         <Box
                             sx={{
                                 height: '100%',
                                 width: '100%',
+                                display:'flex',
+                                alignItems:'center',
+                                justifyContent:'center'
 
 
                             }}
@@ -259,7 +276,7 @@ export default function HomeCardsComponent5() {
                             />
                         </Box>
                     </Grid>
-                    <Grid item xs={12} md={4} lg={4}>
+                    <Grid item xs={12} md={4} lg={4}  sx={{ display:'flex',flexDirection:{xs:'column',sm:'row',md:'column',justifyContent:'space-evenly'}}} >
                         <Box
                             sx={{
                                 position: "relative",
@@ -289,15 +306,17 @@ export default function HomeCardsComponent5() {
                                     borderRadius: "50%",
                                     objectFit: "cover",
 
-                                    padding: '5px'
+                                    padding: '5px',
+                                    mt:{xs:'50px',sm:'32px',md:'0px'}
+                                   
                                 }}
                             />
                             {/* Title */}
-                            <Typography sx={{ ml:'8px', fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
+                            <Typography sx={{mt:{xs:'60px',sm:'40px',md:'16px'}, ml:'8px', fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
                                 {features[4].title}
                             </Typography>
                             {/* Description */}
-                            <Typography sx={{  mx: "auto",maxWidth:'250px', mt: { xs: '5px', sm: '4px' }, fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
+                            <Typography sx={{mt:{xs:'12px'},  mx: "auto",maxWidth:'250px',  fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
                                 {features[4].description}
                             </Typography>
                         </Box>
@@ -332,15 +351,16 @@ export default function HomeCardsComponent5() {
                                     borderRadius: "50%",
                                     objectFit: "cover",
 
-                                    padding: '5px'
+                                    padding: '5px',
+                                       mt:{xs:'20px',md:'72px'}
                                 }}
                             />
                             {/* Title */}
-                            <Typography sx={{ ml:'8px', fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
+                            <Typography sx={{    mt:{xs:'30px',md:'88px'},ml:'8px', fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
                                 {features[5].title}
                             </Typography>
                             {/* Description */}
-                            <Typography sx={{  mx: "auto",maxWidth:'280px', mt: { xs: '5px', sm: '4px' }, fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
+                            <Typography sx={{  mt:'12px',mx: "auto",maxWidth:'280px',  fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
                                 {features[5].description}
                             </Typography>
                         </Box>
@@ -349,7 +369,7 @@ export default function HomeCardsComponent5() {
                     </Grid>
 
                 </Grid>
-                <Grid item display={"flex"} flexWrap={'wrap'} justifyContent={"space-evenly"} >
+                <Grid item display={"flex"} flexWrap={'wrap'} justifyContent={"space-evenly"}  sx={{mt:{xs:'30px',sm:'50px'}}}>
 
                     <Box
                         sx={{
@@ -380,15 +400,16 @@ export default function HomeCardsComponent5() {
                                 borderRadius: "50%",
                                 objectFit: "cover",
 
-                                padding: '5px'
+                                padding: '5px',
+                                mt:{xs:'10px',sm:'20px',md:'0px'}
                             }}
                         />
                         {/* Title */}
-                        <Typography sx={{ ml:'8px', fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
+                        <Typography sx={{mt:{xs:'20px',sm:'25px',md:'20px'}, ml:'8px', fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
                             {features[6].title}
                         </Typography>
                         {/* Description */}
-                        <Typography sx={{  mx: "auto", maxWidth:'280px', mt: { xs: '5px', sm: '4px' }, fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
+                        <Typography sx={{ mt:'12px', mx: "auto", maxWidth:'280px', fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
                             {features[6].description}
                         </Typography>
                     </Box>
@@ -423,15 +444,16 @@ export default function HomeCardsComponent5() {
                                 borderRadius: "50%",
                                 objectFit: "cover",
 
-                                padding: '5px'
+                                padding: '5px',
+                                mt:{xs:'16px'}
                             }}
                         />
                         {/* Title */}
-                        <Typography sx={{ ml:'8px', fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
+                        <Typography sx={{mt:{xs:'20px',sm:'25px',md:'20px'}, ml:'8px', fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
                             {features[7].title}
                         </Typography>
                         {/* Description */}
-                        <Typography sx={{  mx: "auto", maxWidth:'250px', mt: { xs: '5px', sm: '4px' }, fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
+                        <Typography sx={{ mt:{xs:'16px',sm:'12px'}, mx: "auto", maxWidth:'250px',  fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
                             {features[7].description}
                         </Typography>
                     </Box>
@@ -464,15 +486,16 @@ export default function HomeCardsComponent5() {
                                 borderRadius: "50%",
                                 objectFit: "cover",
 
-                                padding: '5px'
+                                padding: '5px',
+                                mt:{xs:'20px',sm:'25px',md:'0px'}
                             }}
                         />
                         {/* Title */}
-                        <Typography sx={{ ml:'8px', fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
+                        <Typography sx={{mt:{xs:'25px',sm:'25px'}, ml:'8px', fontFamily: "'ADLaM Display',serif", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'24px', }, lineHeight: { xs: '20px',md:'30px' }, color: '#363636', }}>
                             {features[8].title}
                         </Typography>
                         {/* Description */}
-                        <Typography sx={{  mx: "auto", maxWidth:'280px', mt: { xs: '5px', sm: '4px' }, fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
+                        <Typography sx={{ mt:'12px', mx: "auto", maxWidth:'280px', fontFamily: "'Ruwudu'", fontWeight: '400', fontSize: { xs: '15px', sm: '15px',md:'16px'  }, lineHeight: { xs: '20px',md:'28px' }, color: '#6A6A6A', }}>
                             {features[8].description}
                         </Typography>
                     </Box>

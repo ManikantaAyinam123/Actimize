@@ -9,7 +9,8 @@ const Theme = createTheme({
           default: "#FF5029",
           bg:'#FEF3E2',
           border:"#FFE4BB",
-          descp:"#6A6A6A"
+          descp:"#6A6A6A",
+          footer:"#FF8C33"
 
         },
   },
